@@ -1,0 +1,28 @@
+.contacts-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.contacts-container div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+}
+
+img {
+    height: 50px;
+    margin: 5px;
+}
+a{
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+a:hover {
+    color: #44f;
+    border: 1px solid #44f;
+}

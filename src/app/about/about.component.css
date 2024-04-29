@@ -1,0 +1,13 @@
+.about-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    min-height: 100vh;
+    gap: 10px;
+    padding: 0 25%;
+
+    /*background-image: linear-gradient(to bottom, black, gray);
+    */
+}

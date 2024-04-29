@@ -1,0 +1,51 @@
+.projects-container{
+    min-height: 100vh;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.projects{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.projects-content{
+    padding: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5%;
+    width: min-content;
+    border: 1px solid;
+    background-color: #445;
+    overflow: hidden;
+}
+.project-title{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.project-description{
+    padding: 10px;
+}
+.project-link{
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+}
+.project-link:hover{
+    color: #44f;
+    border: 1px solid #44f;
+
+}
+.project-video{
+    height: 300px;
+    width: 450px;
+}
+iframe{
+    height: 400px;
+    width: 500px;
+}

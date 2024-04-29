@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+*{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    text-align: center;
+    margin-bottom: 5px;
+    border-bottom: 1px solid;
+    border-radius: 5px;
+    font-family: "Anton", sans-serif;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+.anton-regular {
+    font-weight: 400;
+    font-style: normal;
+}
+  
