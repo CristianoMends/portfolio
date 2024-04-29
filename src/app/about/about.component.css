@@ -7,7 +7,9 @@
     min-height: 100vh;
     gap: 10px;
     padding: 0 25%;
-
-    /*background-image: linear-gradient(to bottom, black, gray);
-    */
+}
+@media (max-width: 600px) {
+    .about-container{
+        padding: 10px;
+    }
 }

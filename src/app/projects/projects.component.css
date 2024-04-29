@@ -49,3 +49,22 @@ iframe{
     height: 400px;
     width: 500px;
 }
+@media (max-width: 600px) {
+    .project-video{
+        width: 50%;
+    }
+    iframe{
+        height: auto;
+        width: 100%;
+    }
+    .projects-content{
+        height: 80%;
+        width: 80%;
+    }
+    .projects{
+        height: 350px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+}

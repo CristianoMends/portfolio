@@ -26,3 +26,8 @@ a:hover {
     color: #44f;
     border: 1px solid #44f;
 }
+@media (max-width: 600px) {
+    img{
+        height: 35px;
+    }
+}

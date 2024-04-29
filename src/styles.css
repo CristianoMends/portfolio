@@ -1,3 +1,8 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
 
 *{
     margin: 0;
@@ -14,4 +19,16 @@ h1{
 html {
     scroll-behavior: smooth;
 }
+@media (max-width: 600px) {
+    h1{
+        font-size: medium;
+    }
+    h2{
+        font-size: small;
+    }
+    h3{
+        font-size: smaller;
+    }
+}
+
   

@@ -49,3 +49,30 @@ a:hover{
 a:hover img{
     border-color: #44f;
 }
+@media (max-width: 600px) {
+    header{
+        flex-direction: column;
+        padding: 5px;
+    }
+    .nav-me a{
+        padding: 0;
+        font-size: small;
+    }
+    .nav-me{
+        padding: 0 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1px;
+    }
+    img{
+        height: 35px;
+    }
+    .nav-sections{
+        padding: 5px;
+        gap: 5px;
+    }
+    .nav-sections a{
+        font-size: x-small;
+    }
+}
