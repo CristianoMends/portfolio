@@ -10,6 +10,8 @@ header{
     border-bottom: 1px solid;
     padding: 10px;
     background-color: #111;
+    z-index: 99;
+
 }
 a{
     display: flex;
@@ -66,7 +68,8 @@ a:hover img{
         gap: 1px;
     }
     img{
-        height: 35px;
+        height: 30px;
+        width: 30px;
     }
     .nav-sections{
         padding: 5px;
