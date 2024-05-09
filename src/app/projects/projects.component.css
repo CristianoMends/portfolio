@@ -28,7 +28,9 @@
     margin-bottom: 10px;
 }
 .project-description{
+    overflow-y: auto;
     padding: 10px;
+    text-align: center;
 }
 .project-link{
     color: #fff;
@@ -49,6 +51,9 @@ iframe{
     height: 400px;
     width: 500px;
 }
+strong{
+    color: yellow;
+}
 @media (max-width: 600px) {
     .project-video{
         width: 50%;
@@ -58,13 +63,19 @@ iframe{
         width: 100%;
     }
     .projects-content{
-        height: 80%;
-        width: 80%;
+        height: auto;
+        width: 90%;
     }
     .projects{
-        height: 350px;
+        height: 400px;
         width: 100%;
         justify-content: center;
         align-items: center;
+    }
+    h2{
+        font-size: medium;
+    }
+    p{
+        font-size: small;
     }
 }

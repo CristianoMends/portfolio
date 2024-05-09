@@ -74,6 +74,10 @@ a:hover img{
     .nav-sections{
         padding: 5px;
         gap: 5px;
+        position: fixed;
+        bottom: 10px;
+        background-color: #111;
+        border-radius: 20px;
     }
     .nav-sections a{
         font-size: x-small;
