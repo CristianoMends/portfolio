@@ -7,12 +7,10 @@
     gap: 10px;
     padding: 0 25%;
     opacity: 0;
-    clip-path: inset(0 50% 0 50%);
-    transition: opacity 0.5s, clip-path 0.5s;
+    transition: opacity 0.5s;
 }
 .anim{
     opacity: 1;
-    clip-path: inset(0 0 0 0);
 }
 @media (max-width: 600px) {
     .about-container{
