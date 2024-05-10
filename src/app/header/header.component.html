@@ -5,10 +5,10 @@
             Cristiano Mendes</a>
     </nav>
     <nav class="nav-sections">
-        <a href="#home">INÍCIO</a>
-        <a href="#about">SOBRE</a>
-        <a href="#skills">HABILIDADES</a>
-        <a href="#projects">PROJETOS</a>
-        <a href="#contacts">CONTATOS</a>
+        <a [class.hover]="activeSection === 'home'" href="#home">INÍCIO</a>
+        <a [class.hover]="activeSection === 'about'" href="#about">SOBRE</a>
+        <a [class.hover]="activeSection === 'skills'" href="#skills">HABILIDADES</a>
+        <a [class.hover]="activeSection === 'projects'" href="#projects">PROJETOS</a>
+        <a [class.hover]="activeSection === 'contacts'" href="#contacts">CONTATOS</a>
     </nav>
 </header>

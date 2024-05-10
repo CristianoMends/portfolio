@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActiveSectionService } from '../section.service';
 
 @Component({
   selector: 'app-home',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  constructor(private activeSectionService: ActiveSectionService) {}
 
+  isCurrentActiveSection(): boolean {
+    return this.activeSectionService.getActiveSection() === 'home';
+  }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActiveSectionService } from '../section.service';
 
 @Component({
   selector: 'app-contacts',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './contacts.component.css'
 })
 export class ContactsComponent {
+  constructor(private activeSectionService: ActiveSectionService) {}
 
+  isCurrentActiveSection(): boolean {
+    return this.activeSectionService.getActiveSection() === 'contacts';
+  }
 }

@@ -1,10 +1,10 @@
 .projects-container{
-    min-height: 100vh;
     flex-wrap: wrap;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    min-height: 100vh;
 }
 .projects{
     display: flex;
@@ -56,6 +56,7 @@ iframe{
 strong{
     color: yellow;
 }
+
 @media (max-width: 600px) {
     .project-video{
         width: 50%;
