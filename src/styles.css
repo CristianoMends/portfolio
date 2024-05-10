@@ -18,11 +18,12 @@ h1{
 }
 section{
     height: 100vh;
-    clip-path: inset(0 50% 0 50%);
-    transition: clip-path 1s;
+opacity:0;
+
+    transition: opacity 1s;
 }
 .anim{
-    clip-path: inset(0 0 0 0);
+    opacity: 1;
 }
 
 @media (max-width: 600px) {
