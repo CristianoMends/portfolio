@@ -8,9 +8,9 @@ import { ActiveSectionService } from '../section.service';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent{
   constructor(private activeSectionService: ActiveSectionService) {}
-
+ 
   isCurrentActiveSection(): boolean {
     return this.activeSectionService.getActiveSection() === 'home';
   }

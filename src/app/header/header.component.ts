@@ -40,8 +40,12 @@ export class HeaderComponent {
   updateActiveSection(sectionId: string): void {
     this.activeSection = sectionId;
   }
-  ngOnInit(): void {
-   this.updateActiveSection('home');    
+  ngAfterViewInit(): void {
+    try {
+      this.onWindowScroll();    
+    } catch (error) {
+      
+    }
   }
 
 }

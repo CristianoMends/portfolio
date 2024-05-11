@@ -9,7 +9,7 @@ header{
     flex-direction: row;
     border-bottom: 1px solid;
     padding: 10px;
-    background-color: #111;
+    background-color: var(--black);
     z-index: 99;
 }
 a{
@@ -27,7 +27,7 @@ a{
 }
 .nav-avatar{
     border-radius: 50%;
-    border: 1px solid white;
+    border: 1px solid aliceblue;
 }
 .nav-sections{
     padding: 0 20px;
@@ -42,12 +42,13 @@ a{
     border: 1px solid transparent;
     padding: 5px;
 }
-.hover{
-    color: #44f;
-    border: 1px solid #44f;
+a:hover{
+    border: 1px solid white;
     border-radius: 5px;
-    border-color: #44f;
-    border-color: #44f;
+}
+.hover{
+    border: 1px solid white;
+    border-radius: 5px;
 }
 @media (max-width: 600px) {
     header{

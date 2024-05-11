@@ -1,41 +1,56 @@
-body, html{
+:root {
+    --white: #F8F8FF;
+    --black: #111;
+    --blue: #223;
+    --grey: #696969;
+}
+
+body,
+html {
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
+    background-color: #223;
 }
 
-*{
+* {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-h1{
+
+h1 {
     text-align: center;
     margin-bottom: 5px;
     border-bottom: 1px solid;
     border-radius: 5px;
 
 }
-section{
-    height: 100vh;
-opacity:0;
 
+section {
+    height: 100%;
+    color: var(--white);
+    opacity: 0;
     transition: opacity 1s;
 }
-.anim{
+
+.anim {
     opacity: 1;
 }
 
 @media (max-width: 600px) {
-    h1{
+    section{
+        height: 500px;
+    }
+    h1 {
         font-size: medium;
     }
-    h2{
+
+    h2 {
         font-size: small;
     }
-    h3{
+
+    h3 {
         font-size: smaller;
     }
 }
-
-  
