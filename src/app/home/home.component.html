@@ -1,7 +1,16 @@
 <section id="home" class="home-container" [class.anim]="isCurrentActiveSection()">
-
-    <h1 class="anton-regular">Olá, Eu sou o Cristiano Mendes</h1>
-    <h3>Desenvolvedor de software Backend</h3>
+    <div class="content">
+        <div class="title">
+            <h1 class="typing-text" #typingText>Olá, Eu sou o Cristiano Mendes</h1>
+            <h4>Desenvolvedor de Software FullStack</h4>
+        </div>
+        <div class="video-container">
+            <video width="200" autoplay loop muted>
+                <source src="./assets/me.mp4" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+        </div>
+    </div>
     <div class="scroll-down">
         &#x2193;
     </div>
