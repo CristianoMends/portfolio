@@ -8,6 +8,9 @@
     text-align: center;
     width: 400px;
 }
+.arrow{
+    opacity: 0;
+}
 
 .scroll-down {
     position: relative;
@@ -38,6 +41,7 @@ video{
     width: 100%;
     height: 100%;
     transform: scale(1.35);
+    filter: blur(0px) contrast(150%);
 }
 .typing-text {
     border: none;
@@ -50,20 +54,19 @@ h1{
     text-shadow: 3px 3px 2px black;
 }
 h4{
-    text-shadow: 3px 3px 2px black;
+    visibility: hidden;
     opacity: 0;
-    animation: fadeIn 2s 3s linear forwards;
+    text-shadow: 3px 3px 2px black;
+}
+.show{
+    transition: opacity 2s, visibility 2s;
+    visibility: visible;
+    opacity: 1;
 }
 
 @keyframes blink-caret {
     from, to { border-color: transparent; }
     50% { border-color: black; }
-}
-@keyframes fadeIn {
-    100%{
-        opacity: 1;
-    }
-    
 }
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {

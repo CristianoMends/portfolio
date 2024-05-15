@@ -1,7 +1,7 @@
 :root {
     --white: #F8F8FF;
     --black: #111;
-    --blue: rgb(32, 32, 85);
+    --blue: rgb(26, 26, 94);
     --grey: #696969;
 }
 
@@ -31,26 +31,22 @@ section {
     height: 100%;
     color: var(--white);
     opacity: 0;
-    transition: opacity 1s;
+    transition: opacity 1s, visibility 1s;
 }
 
 .anim {
+    display: flex;
+    visibility: visible;
     opacity: 1;
 }
 
 @media (max-width: 600px) {
-    section{
-        height: 500px;
-    }
-    h1 {
-        font-size: medium;
-    }
-
-    h2 {
+    h1{
+        font-size: large;
+    }h4{
         font-size: small;
     }
-
-    h3 {
-        font-size: smaller;
+    h2{
+        font-size: large;
     }
 }

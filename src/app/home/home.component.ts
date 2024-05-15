@@ -1,10 +1,11 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { ActiveSectionService } from '../section.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -15,6 +16,8 @@ export class HomeComponent implements AfterViewInit {
     return this.activeSectionService.getActiveSection() === 'home';
   }
   @ViewChild('typingText') typingText!: ElementRef;
+  @ViewChild('subText') subText!: ElementRef;
+  @ViewChild('arrow') arrow!: ElementRef;
 
   ngAfterViewInit(): void {
     this.typeWriterEffect();    
@@ -24,16 +27,16 @@ export class HomeComponent implements AfterViewInit {
     const element = this.typingText.nativeElement;
     const text = element.textContent;
     element.textContent = '';
-    let index = 0;
 
-    const type = () => {
-      if (index < text.length) {
-        element.textContent += text.charAt(index);
-        index++;
-        setTimeout(type, 100);
-      }
-    };
-
-    type();
+    for(let i = 0;i<text.length;i++){
+      
+      setTimeout(() => {
+        element.textContent += text.charAt(i);
+        if(element.textContent == text){
+          this.subText.nativeElement.className = 'show';    
+          this.arrow.nativeElement.className = 'scroll-down';    
+        }
+      }, i * 100);
+    }
   }
 }

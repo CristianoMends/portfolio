@@ -16,6 +16,7 @@
 
 }
 .projects-content{
+    max-width:  700px;
     padding: 10px 0;
     display: flex;
     justify-content: center;
@@ -47,7 +48,6 @@ span{
 
 }
 iframe{
-    width: 600px;
     height: 400px;
     border-radius: 0 0 5px 5px;
 }
@@ -60,7 +60,7 @@ strong{
         width: 50%;
     }
     iframe{
-        height: 400px;
+        height: 300px;
         width: 100%;
     }
     .projects-content{
