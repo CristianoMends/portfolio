@@ -28,7 +28,7 @@ export class HeaderComponent {
     let activeSectionId = '';
     sections.forEach(section => {
       const sectionT = section.getBoundingClientRect().top + window.scrollY;
-      const sectionTop = (sectionT) - (sectionT * 0.05);
+      const sectionTop = (sectionT)// - (sectionT * 0.05);
       const sectionHeight = section.clientHeight;
 
       if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {

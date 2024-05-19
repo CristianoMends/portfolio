@@ -41,12 +41,16 @@ section {
 }
 
 @media (max-width: 600px) {
-    h1{
-        font-size: large;
-    }h4{
-        font-size: small;
+    h1 {
+        font-size: 1.3em; /* Ajuste conforme necessário */
     }
-    h2{
-        font-size: large;
+    h2 {
+        font-size: 1.1em; /* Ajuste conforme necessário */
+    }
+    h3 {
+        font-size: 1em; /* Ajuste conforme necessário */
+    }
+    h4 {
+        font-size: 0.9em; /* Ajuste conforme necessário */
     }
 }

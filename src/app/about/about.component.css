@@ -8,10 +8,28 @@
     padding: 0 25%;
     opacity: 0;
     transition: opacity 0.5s;
+    text-align: justify;
+}
+.about-dev{
+    text-align: center;
 }
 .anim{
     opacity: 1;
 }
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+}
+
+
 @media (max-width: 600px) {
     .about-container{
         padding: 10px;
