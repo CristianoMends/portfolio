@@ -26,10 +26,20 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap: 50px;
+}
+.invisible{
+    overflow: hidden;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    scale: 0;
 }
 .video-container{
+    transition: opacity 2s, width 2s, height 2s;
+    opacity: 1;
     background-color: #fff;
     width: 200px;
     height: 200px;
@@ -37,6 +47,13 @@
     border: 1px solid #fff;
     filter: drop-shadow(2px 2px 5px #fff);
     overflow: hidden;
+    animation: move 5s ease-in-out infinite;
+}
+@keyframes move {
+    0%{}
+    50%{
+        transform: translateY(5px) translateX(5px);
+    }100%{}
 }
 video{
     width: 100%;

@@ -18,25 +18,30 @@ export class HomeComponent implements AfterViewInit {
   @ViewChild('typingText') typingText!: ElementRef;
   @ViewChild('subText') subText!: ElementRef;
   @ViewChild('arrow') arrow!: ElementRef;
+  @ViewChild('video') video!: ElementRef;
 
   ngAfterViewInit(): void {
     this.typeWriterEffect();    
   }
 
-  typeWriterEffect() {
+  async typeWriterEffect() {
     const element = this.typingText.nativeElement;
     const text = element.textContent;
     element.textContent = '';
 
-    for(let i = 0;i<text.length;i++){
+    for(let char in text){
       
-      setTimeout(() => {
-        element.textContent += text.charAt(i);
+        element.textContent += text.charAt(char);
         if(element.textContent == text){
           this.subText.nativeElement.className = 'show';    
-          this.arrow.nativeElement.className = 'scroll-down';    
+          this.arrow.nativeElement.className = 'scroll-down';
+          this.video.nativeElement.className = 'video-container';
         }
-      }, i * 100);
+
+      await this.sleep(100);
     }
+  }
+  sleep(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 }

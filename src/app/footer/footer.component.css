@@ -56,7 +56,13 @@ button:hover {
   border-color: #fff;
   cursor: pointer;
 }
-
+div #page{
+  width: max-content;
+  color: var(--blue);
+}
+.page-container{
+  text-align: center;
+}
 @media (max-width: 599px) {
   footer {
     font-size: small;
