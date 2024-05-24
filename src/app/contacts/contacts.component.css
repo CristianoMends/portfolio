@@ -13,6 +13,8 @@
 }
 
 img {
+    position: relative;
+    left: -10000px;
     height: 40px;
     margin: 5px;
 }
@@ -23,6 +25,15 @@ a{
 a:hover {
     color: #44f;
     border: 1px solid #44f;
+}
+.animation{
+    animation: anim 1s linear forwards;
+}
+@keyframes anim {
+    from{}to{
+        left: 0px;
+    }
+    
 }
 @media (max-width: 600px) {
     img{

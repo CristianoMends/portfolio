@@ -1,22 +1,47 @@
-.skills-container{
+.skills-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-img{
-    height: 50px;
+
+img {
+    height: 60px;
+    padding: 10px;
+    border: 1px solid var(--blue);
     margin: 5px;
+    border-radius: 10px;
+
 }
-.skills-container div{
+
+.skills-container div {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 90%;;
+    width: 90%;
 }
+
+.animation {
+    animation: domino 1s linear;
+}
+
+@keyframes domino {
+    0% {}
+
+    50% {
+        border-color: #fff;
+        transform: translateX(10px) translateY(0);
+    }
+    100% {}
+}
+
 @media (max-width: 600px) {
-    img{
+    img {
         height: 35px;
+    }
+
+    .skills-container div {
+        align-items: center;
     }
 }
