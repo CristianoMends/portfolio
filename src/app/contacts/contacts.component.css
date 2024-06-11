@@ -22,10 +22,6 @@ a{
     border: 1px solid transparent;
     border-radius: 5px;
 }
-a:hover {
-    color: #44f;
-    border: 1px solid #44f;
-}
 .animation{
     animation: anim 1s linear forwards;
 }

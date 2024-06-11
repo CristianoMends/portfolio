@@ -1,10 +1,28 @@
 <section id="home" class="home-container" [class.anim]="isCurrentActiveSection()">
     <div class="content">
         <div class="title">
-            <h1 class="typing-text" #typingText>Olá, Eu sou o Cristiano Mendes</h1>
-            <h4 class="sub-text" #subText>Desenvolvedor de Software FullStack</h4>
+            <h2 class="typing-text invisible" #typingText>Olá, Eu sou o</h2>
+            <h1 class="name typing-text invisible" #name>Cristiano Mendes</h1>
+            <h4 class="typing-text invisible" #subText>E sou desenvolvedor FullStack</h4>
+            <div class="contact invisible" #contact>
+                <div class="contact-container">
+                    <a href="mailto:cristianomendes.dev@gmail.com" target="_blank">
+                        <img src="./assets/gmail.png" alt="icon gmail" width="30px">
+                    </a>
+                    <a href="https://github.com/CristianoMends" target="_blank">
+                        <img src="./assets/github.png" alt="icon github" width="30px">
+                    </a>
+                    <a href="https://www.linkedin.com/in/cristiano-mendes-link/" target="_blank">
+                        <img src="./assets/linkedin.png" alt="icon linkedin" width="30px">
+                    </a>
+                    <a href="https://www.instagram.com/cristiano_mend3s" target="_blank">
+                        <img src="./assets/Instagram_Glyph_White.png" alt="icon instagram" width="30px">
+                    </a>
+                </div>
+                <a class="cv invisible" href="https://docs.google.com/document/d/12Dp37xgrqwT1CdDJMyo4azIaGQiV4h2sfDV6joxD3kM/edit?usp=sharing" target="_blank" #cv>Download CV</a>
+            </div>
         </div>
-        <div class="invisible" #video>
+        <div class="invisible nonedisplay" #video>
             <video width="200" autoplay loop muted>
                 <source src="./assets/me.mp4" type="video/mp4">
                 Seu navegador não suporta o elemento de vídeo.
@@ -14,4 +32,5 @@
     <div class="arrow" #arrow>
         &#x2193;
     </div>
+    
 </section>

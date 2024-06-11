@@ -8,7 +8,7 @@
 img {
     height: 60px;
     padding: 10px;
-    border: 1px solid var(--blue);
+    border: 1px solid #000;
     margin: 5px;
     border-radius: 10px;
 
