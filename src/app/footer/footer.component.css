@@ -10,6 +10,14 @@ footer {
   padding: 5%;
   border-top: 1px solid #000;
 }
+.attr{
+  display: flex;
+  flex-direction: column;
+}
+.attr div{
+  display: flex;
+  justify-content: start;
+}
 
 .container {
   display: flex;
