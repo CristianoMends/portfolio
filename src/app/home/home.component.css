@@ -7,7 +7,7 @@
     margin-top: 0;
     padding: 0;
     border-bottom: 1px solid black;
-    background: linear-gradient(to top, black, rgb(7, 7, 178));
+    background-image: radial-gradient(farthest-corner at center, rgb(7, 7, 178) 50%, var(--black) 100%);
     
 }
 

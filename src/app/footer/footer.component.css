@@ -8,6 +8,7 @@ footer {
   flex-direction: column;
   gap: 50px;
   padding: 5%;
+  border-top: 1px solid #000;
 }
 
 .container {
@@ -21,7 +22,10 @@ form {
   display: flex;
   flex-direction: column;
   gap: 5px;
-
+}
+textarea{
+  width: 300px;
+  height: 100px;
 }
 
 .contact-container {
@@ -57,6 +61,9 @@ div #page{
 
 }
 .page-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 @media (max-width: 599px) {
