@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActiveSectionService } from '../section.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -9,9 +10,7 @@ import { ActiveSectionService } from '../section.service';
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
-  constructor(private activeSectionService: ActiveSectionService) {}
 
-  isCurrentActiveSection(): boolean {
-    return this.activeSectionService.getActiveSection() === 'about';
-  }
+
+
 }

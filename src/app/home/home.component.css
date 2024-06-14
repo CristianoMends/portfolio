@@ -10,13 +10,21 @@
     background-image: url(../../assets/background.jpg);
     background-size: cover;
     background-attachment: fixed;
-    
+    opacity: 1;
 }
 
 .title {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
     width: 50%;
     height: 50%;
-    text-align: left;
+}
+.title-text{
+    width: 100%;
+    min-height: 50%;
+    height: max-content;
 }
 
 .title h1 {
@@ -27,23 +35,25 @@
 .name {
     text-decoration: none;
     border: none;
-    }
-    
-    .contact {
-        display: flex;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     gap: 5px;
-    margin-top: 25px;
-    }
-    
-    .cv {
-        text-decoration: none;
-        padding: 5px;
-        color: #fff;
-        width: max-content;
-        border-radius: 5px;
-        border: 1px solid #fff;
-        }
+    min-height: 50%;
+}
+
+.cv {
+    text-decoration: none;
+    padding: 5px;
+    color: #fff;
+    width: max-content;
+    border-radius: 5px;
+    border: 1px solid #fff;
+}
 
 
 .content {
@@ -53,18 +63,14 @@
     align-items: center;
     gap: 50px;
     width: 50%;
-    height: 50%;
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.5);
-    box-shadow: 1px 1px 3px #fff;
+    height: 40%;
 }
 
 .contact-container {
     display: flex;
     align-items: center;
     justify-content: start;
-    gap: 2%;
+    gap: 5px;
 }
 
 .video-container {
@@ -74,8 +80,8 @@
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    border: 1px solid #fff;
-    filter: drop-shadow(1px 1px 3px #fff);
+    border: 1px solid #00000060;
+    filter: drop-shadow(1px 1px 3px #ffffff74);
     overflow: hidden;
     animation: move 5s ease-in-out infinite;
 }
@@ -91,19 +97,10 @@
     width: 0;
     scale: 0;
 }
-.arrow {
-    display: none;
-    opacity: 0;
+a{
+    cursor: pointer;
 }
 
-.scroll-down {
-    position: absolute;
-    bottom: 100px;
-
-    animation: dragUp 3s infinite;
-    transition: opacity 1s;
-    opacity: 0;
-}
 @keyframes move {
     0% {}
 
@@ -113,24 +110,7 @@
 
     100% {}
 }
-@keyframes dragUp {
 
-    0%,
-    20% {
-        transform: translateY(0);
-    }
-
-    40% {
-        transform: translateY(-80%);
-    }
-
-    60% {
-        opacity: 1;
-    }
-    100%{
-        transform: translateY(-80%);
-    }
-}
 @keyframes blink-caret {
 
     from,
@@ -142,6 +122,7 @@
         border-color: black;
     }
 }
+
 video {
     width: 100%;
     height: 100%;
@@ -183,8 +164,12 @@ h4 {
         align-items: center;
         gap: 5px;
     }
-    .contact-container{
+
+    .contact-container {
         gap: 5px;
+    }
+    .contact{
+        scale: 80%;
     }
 
     .title {
@@ -204,8 +189,5 @@ h4 {
 
     .title h1 {
         font-size: 1.3em;
-    }
-    .scroll-down {
-        bottom: 40px;
     }
 }

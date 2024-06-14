@@ -13,4 +13,7 @@ export class ActiveSectionService {
   getActiveSection(): string {
     return this.activeSection;
   }
+  goTo(){
+    
+  }
 }

@@ -9,6 +9,7 @@ header{
     padding: 10px;
     background-color: transparent;
     z-index: 99;
+    z-index: 101;
 }
 a{
     border: 1px solid transparent;

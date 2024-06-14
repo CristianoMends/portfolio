@@ -1,22 +1,27 @@
-<section id="home" class="home-container" [class.anim]="isCurrentActiveSection()">
-    <div class="content">
+<section id="home" class="home-container">
+    <div class="content box">
         <div class="title">
-            <h2 class="typing-text invisible" #typingText>Olá, Eu sou o</h2>
-            <h1 class="name typing-text invisible" #name>Cristiano Mendes</h1>
-            <h4 class="typing-text invisible" #subText>E sou desenvolvedor FullStack</h4>
+            <div class="title-text">
+                <h2 class="typing-text invisible" #typingText>Olá, Eu sou o</h2>
+                <h1 class="name typing-text invisible" #name>Cristiano Mendes</h1>
+                <h4 class="typing-text invisible" #subText>E sou desenvolvedor FullStack</h4>
+            </div>
+
             <div class="contact invisible" #contact>
                 <div class="contact-container">
                     <a href="mailto:cristianomendes.dev@gmail.com" target="_blank">
-                        <img src="./assets/gmail.png" alt="icon gmail" width="30px">
+                        <img src="./assets/gmail.png" alt="icon gmail" height="30px">
                     </a>
                     <a href="https://github.com/CristianoMends" target="_blank">
-                        <img src="./assets/github.png" alt="icon github" width="30px">
+                        <img src="./assets/github.png" alt="icon github" height="30px">
                     </a>
                     <a href="https://www.linkedin.com/in/cristiano-mendes-link/" target="_blank">
-                        <img src="./assets/linkedin.png" alt="icon linkedin" width="30px">
+                        <img src="./assets/linkedin.png" alt="icon linkedin" height="30px">
                     </a>
                 </div>
-                <a class="cv invisible" href="https://drive.google.com/file/d/1HvZgI5E6LscmIBayRZVHk02CUs9jPiKr/view?usp=sharing" target="_blank" #cv>Download CV</a>
+                <a class="cv invisible"
+                    href="https://drive.google.com/file/d/1HvZgI5E6LscmIBayRZVHk02CUs9jPiKr/view?usp=sharing"
+                    target="_blank" #cv>Download CV</a>
             </div>
         </div>
         <div class="invisible nonedisplay" #video>
@@ -26,8 +31,4 @@
             </video>
         </div>
     </div>
-    <div class="arrow" #arrow>
-        <img src="./assets/touch.png" alt="" width="50px" height="50px">
-    </div>
-    
 </section>

@@ -10,7 +10,6 @@ import { ActiveSectionService } from '../section.service';
 })
 export class SkillsComponent implements AfterViewInit {
   @ViewChild('container') container!: ElementRef;
-  constructor(private activeSectionService: ActiveSectionService) { }
 
   async ngAfterViewInit() {
     try {
@@ -40,9 +39,4 @@ export class SkillsComponent implements AfterViewInit {
     await this.sleep(1000);
     await (img as HTMLImageElement).classList.remove('animation');
   }
-  
-  isCurrentActiveSection(): boolean {
-    return this.activeSectionService.getActiveSection() === 'skills';
-  }
-
 }

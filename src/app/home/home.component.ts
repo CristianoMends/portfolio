@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { ActiveSectionService } from '../section.service';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,15 +11,10 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements AfterViewInit {
-  constructor(private activeSectionService: ActiveSectionService) { }
 
-  isCurrentActiveSection(): boolean {
-    return this.activeSectionService.getActiveSection() === 'home';
-  }
   @ViewChild('typingText') typingText!: ElementRef;
   @ViewChild('name') name!: ElementRef;
   @ViewChild('subText') subText!: ElementRef;
-  @ViewChild('arrow') arrow!: ElementRef;
   @ViewChild('video') video!: ElementRef;
   @ViewChild('cv') cv!: ElementRef;
   @ViewChild('contact') contact!: ElementRef;
@@ -41,13 +37,12 @@ export class HomeComponent implements AfterViewInit {
         if (element.textContent == text) {
           element.className = '';
 
-          if(i == textElements.length - 1){
+          if (i == textElements.length - 1) {
             element.className = 'typing-text visible'
-            this.arrow.nativeElement.className = 'scroll-down';
             this.video.nativeElement.className = 'video-container';
             this.cv.nativeElement.className = 'cv visible';
             this.contact.nativeElement.className = 'contact visible'
-          }              
+          }
         }
 
         await this.sleep(50);
@@ -56,5 +51,14 @@ export class HomeComponent implements AfterViewInit {
   }
   sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
+  }
+  constructor(private route: ActivatedRoute) { }
+
+  ngOnInit() {
+    this.route.fragment.subscribe(fragment => {
+      if (fragment) {
+        document.getElementById(fragment)?.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
   }
 }

@@ -1,51 +1,24 @@
-import { Component, HostListener } from '@angular/core';
-import { ActiveSectionService } from '../section.service';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  constructor(private activeSectionService: ActiveSectionService){}
-  activeSection: string = '';
+  constructor(private router: Router, private route: ActivatedRoute, private viewportScroller: ViewportScroller) { }
 
-  @HostListener('window:scroll', ['$event'])
-  onWindowScroll() {
-    const sections = document.querySelectorAll('section');
-    const currentScrollPosition = this.getCurrentScrollPosition();
-    const currentSection = this.getActiveSection(sections, currentScrollPosition);
-    this.updateActiveSection(currentSection);
-    this.activeSectionService.setActiveSection(currentSection);
-  }
+  @ViewChild('home') home!:ElementRef
+  @ViewChild('about') about!:ElementRef
+  @ViewChild('contacts') contacts!:ElementRef
+  @ViewChild('skills') skills!:ElementRef
+  @ViewChild('projects') projects!:ElementRef
 
-  getCurrentScrollPosition(): number {
-    return window.scrollY;
+  goToSection(section: string, element:any) {
+    this.router.navigate([], { fragment: section });
+    element.nativeElement.className = 'hover';
   }
-  getActiveSection(sections: NodeListOf<Element>, scrollPosition: number): string {
-    let activeSectionId = '';
-    sections.forEach(section => {
-      const sectionT = section.getBoundingClientRect().top + window.scrollY;
-      const sectionTop = (sectionT)// - (sectionT * 0.05);
-      const sectionHeight = section.clientHeight;
-
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        activeSectionId = section.id;
-      }
-    });
-    return activeSectionId;
-  }
-  updateActiveSection(sectionId: string): void {
-    this.activeSection = sectionId;
-  }
-  ngAfterViewInit(): void {
-    try {
-      this.onWindowScroll();    
-    } catch (error) {
-      
-    }
-  }
-
 }

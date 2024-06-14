@@ -1,0 +1,16 @@
+
+.container div{
+    width: 100vw;
+    height: 25vh;
+    position: fixed;
+    left: 0;
+    z-index: 99;
+}
+.top{
+    top: 0;
+    background: linear-gradient(to bottom, black,70%, transparent);
+}
+.down{
+    bottom: 0;    
+    background: linear-gradient(to top,black,70%,transparent);
+}

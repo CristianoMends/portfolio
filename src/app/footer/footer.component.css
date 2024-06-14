@@ -9,6 +9,7 @@ footer {
   gap: 50px;
   padding: 5%;
   border-top: 1px solid #000;
+  z-index: 100;
 }
 .attr{
   display: flex;
@@ -73,6 +74,9 @@ div #page{
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+.attr{
+  font-size: small;
 }
 @media (max-width: 599px) {
   footer {

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActiveSectionService } from '../section.service';
 import { CommonModule } from '@angular/common';
 import { PreviewComponent } from "../preview/preview.component";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-projects',
@@ -12,10 +13,9 @@ import { PreviewComponent } from "../preview/preview.component";
 })
 export class ProjectsComponent {
   constructor(
-    private activeSectionService: ActiveSectionService,
-    private preview: PreviewComponent
+    private preview: PreviewComponent,
   ) { }
-
+  
 
   projects = [
     {
@@ -31,15 +31,13 @@ export class ProjectsComponent {
     }
   ]
 
-
-  isCurrentActiveSection(): boolean {
-    return this.activeSectionService.getActiveSection() === 'projects';
-  }
   goLink(url: string) {
     window.open(url, '_blank');
   }
   showPreview(url: string) {
     this.preview.toggleVisibility(url);
   }
+
+
 
 }

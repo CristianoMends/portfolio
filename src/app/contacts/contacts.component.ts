@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { ActiveSectionService } from '../section.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-contacts',
@@ -10,11 +11,7 @@ import { ActiveSectionService } from '../section.service';
 })
 export class ContactsComponent implements AfterViewInit {
   @ViewChild('container') container!:ElementRef
-  constructor(private activeSectionService: ActiveSectionService) {}
 
-  isCurrentActiveSection(): boolean {
-    return this.activeSectionService.getActiveSection() === 'contacts';
-  }
   async ngAfterViewInit() {
     try {
       const images: HTMLImageElement[] = this.container.nativeElement.querySelectorAll('img');

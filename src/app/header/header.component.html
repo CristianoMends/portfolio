@@ -1,9 +1,9 @@
-<header [class.header]="activeSection !== 'home'">
+<header>
     <nav class="nav-sections">
-        <a [class.hover]="activeSection === 'home'" href="#home">INÍCIO</a>
-        <a [class.hover]="activeSection === 'about'" href="#about">SOBRE</a>
-        <a [class.hover]="activeSection === 'skills'" href="#skills">HABILIDADES</a>
-        <a [class.hover]="activeSection === 'projects'" href="#projects">PROJETOS</a>
-        <a [class.hover]="activeSection === 'contacts'" href="#contacts">CONTATOS</a>
+        <a #home (click)="goToSection('home',home)">INÍCIO</a>
+        <a #about (click)="goToSection('about',about)">SOBRE</a>
+        <a #skills (click)="goToSection('skills',skills)">HABILIDADES</a>
+        <a #projects (click)="goToSection('projects',projects)">PROJETOS</a>
+        <a #contacts (click)="goToSection('contacts',contacts)">CONTATOS</a>
     </nav>
 </header>
