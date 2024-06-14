@@ -16,7 +16,7 @@
 .title {
     display: flex;
     justify-content: start;
-    align-items: center;
+    align-items: start;
     flex-direction: column;
     width: 50%;
     height: 50%;
