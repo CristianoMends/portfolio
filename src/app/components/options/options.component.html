@@ -1,0 +1,10 @@
+<section class="container">
+    <div class="content">
+        <div class="btn-container">
+            <p class="name">Trocar Tema</p>
+            <div class="btn" (click)="switchTheme()">
+                <div [class]="!isDarkTheme ? 'icon start' : 'icon end'">{{ !isDarkTheme ? '🌞' : '🌜' }}</div>
+            </div>
+        </div>
+    </div>
+</section>

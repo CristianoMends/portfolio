@@ -1,0 +1,65 @@
+.about-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding-top: 100px;
+    min-height: 100vh;
+}
+.top{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.top p{
+    text-align: center;
+    width: 50%;
+}
+.about-description{
+    width: 90%;
+}
+.down{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.down .left, .rigth{
+    width: 40%;
+}
+/*--------------*/
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--boxShadow);
+    transition: box-shadow 0.3s ease;
+    background-color: var(--formColor);
+}
+
+.left:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.left div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 15px;
+}
+
+.left h3 {
+    margin: 10px 0;
+}
+
+.left p {
+    width: 100%;
+    margin-top: 0;
+    line-height: 1.6;
+}

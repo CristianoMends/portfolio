@@ -1,0 +1,23 @@
+.preview{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    background-color: #0000009d;
+    padding: 15px;
+}
+iframe{
+    height: 80%;
+    width: 80%;
+    border-radius: 5px;
+}
+@media (max-width: 600px) {
+    iframe{
+        height: 50%;
+    }
+}

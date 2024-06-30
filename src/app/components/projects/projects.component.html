@@ -1,0 +1,48 @@
+<app-preview></app-preview>
+<section id="projects" class="projects-container">
+    <h2>Meus projetos</h2>
+    <div class="description">
+        <p>Aqui você encontrará alguns dos projetos pessoais que criei com seus detalhes, demonstrações e as tecnologias
+            utilizadas</p>
+    </div>
+    <div class="projects">
+        <div class="project">
+            <div class="top">
+                <div class="left">
+                    <img class="pc" src="../../assets/thecatalog-pc.png" [alt]="">
+                    <img class="mobile" src="../../assets/thecatalog-mobile.png" alt="">
+                </div>
+                <div class="rigth">
+                    <h3 class="project-title">
+                        The Catalog
+                    </h3>
+                    <p class="project-description">
+                        The Catalog é um Catálogo de produtos que oferece uma maneira intuitiva e eficiente de explorar
+                        uma variedade de produtos de varias lojas registradas. Com uma interface amigável e
+                        funcionalidade de busca e contato com vendedor, os usuários podem navegar facilmente pelo
+                        catálogo, encontrando informações detalhadas sobre cada item.
+                    </p>
+                    <h3>Tecnologias</h3>
+                    <div class="technologies">
+                        <div><span>Nest.Js</span></div>
+                        <div><span>Angular 17</span> </div>
+                        <div><span>PostgreSQL</span></div>
+                        <div><span>Vercel</span></div>
+                    </div>
+                    <div class="down">
+                        <button
+                            (click)="showPreview('https://www.youtube.com/embed/nN-u9vPlpdg?si=Ji8T1VeYcE09jx6d&amp&autoplay=1;controls=0')">
+                            VISUALIZAR DEMO
+                        </button>
+                        <button (click)="goLink('https://thecatalog.vercel.app')">
+                            ACESSAR SITE
+                        </button>
+                        <button (click)="goLink('https://github.com/CristianoMends/product-catalog-app')">
+                            VER CÓDIGO
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
