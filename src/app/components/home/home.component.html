@@ -1,0 +1,37 @@
+<section id="home" class="home-container">
+    <div class="waves">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    <div class="waves-top">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    <div class="content box">
+        <div class="title">
+            <div class="title-text">
+                <h3 class="typing-text invisible" id="hello" #hello>Olá, Eu sou o</h3>
+                <h1 class="typing-text invisible" id="name" #name>Cristiano Mendes</h1>
+            </div>
+
+            <div class="cv-container invisible" #contact>
+                <p class="description">
+                    Um desenvolvedor dedicado, focado na construção e manutenção de Websites e Aplicações Web de ponta a ponta, atuando
+                    tanto na parte visual quanto na funcionalidade, com objetivo de contribuir para o sucesso e a
+                    eficiência do produto.
+                </p>
+
+                <button id="cv" class="cv invisible" (click)="downloadCv()" #cv>
+                    BAIXAR CV
+                </button>
+            </div>
+        </div>
+        <div class="invisible" #video>
+            <img src="./assets/me.png" alt="">
+        </div>
+    </div>
+</section>

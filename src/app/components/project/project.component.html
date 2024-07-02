@@ -1,0 +1,29 @@
+<div class="project">
+    <div class="left">
+        <img *ngIf="pcImagePath" class="pc" [src]="pcImagePath" alt="">
+        <img *ngIf="mobileImagePath" class="mobile" [src]="mobileImagePath" alt="">
+    </div>
+    <div class="rigth">
+        <h3 class="project-title">
+            {{name}}
+        </h3>
+        <p class="project-description">
+            {{description}}
+        </p>
+        <h3>Tecnologias</h3>
+        <div class="technologies">
+            <div *ngFor="let t of technologies"><span>{{t}}</span></div>
+        </div>
+        <div class="down">
+            <button *ngIf="urlVideo" (click)="showPreview(urlVideo)">
+                VISUALIZAR DEMO
+            </button>
+            <button *ngIf="urlProduction" (click)="goLink(urlProduction)">
+                ACESSAR SITE
+            </button>
+            <button *ngIf="urlRepository" (click)="goLink(urlRepository)">
+                VER CÓDIGO
+            </button>
+        </div>
+    </div>
+</div>

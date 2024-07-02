@@ -1,0 +1,20 @@
+<app-preview></app-preview>
+<section id="projects" class="projects-container">
+    <h2>Meus projetos</h2>
+    <div class="description">
+        <p>Aqui você encontrará alguns dos projetos pessoais que criei com seus detalhes, demonstrações e as tecnologias
+            utilizadas</p>
+    </div>
+    <div class="projects">
+        <app-project 
+            [name]="'The Catalog'"
+            [description]="'The Catalog é um Catálogo de produtos que oferece uma maneira intuitiva e eficiente de explorar uma variedade de produtos de várias lojas registradas. Com uma interface amigável e funcionalidade de busca e contato com vendedor, os usuários podem navegar facilmente pelo catálogo, encontrando informações detalhadas sobre cada item.'"
+            [technologies]="['Nest.Js', 'Angular 17', 'PostgreSQL', 'Vercel']"
+            [pcImagePath]="'../../assets/thecatalog-pc.png'"
+            [mobileImagePath]="'../../assets/thecatalog-mobile.png'"
+            [urlRepository]="'https://github.com/CristianoMends/product-catalog-app'"
+            [urlProduction]="'https://thecatalog.vercel.app'"
+            [urlVideo]="'https://www.youtube.com/embed/nN-u9vPlpdg?si=Ji8T1VeYcE09jx6d&amp&autoplay=1;controls=0'">
+        </app-project>
+    </div>
+</section>

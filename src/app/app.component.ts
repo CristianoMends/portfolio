@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "./header/header.component";
-import { HomeComponent } from "./home/home.component";
-import { AboutComponent } from "./about/about.component";
-import { SkillsComponent } from "./skills/skills.component";
-import { ContactsComponent } from "./contacts/contacts.component";
-import { FooterComponent } from "./footer/footer.component";
-import { ProjectsComponent } from "./projects/projects.component";
-import { FilmComponent } from './film/film.component';
+import { HeaderComponent } from "./components/header/header.component";
+import { HomeComponent } from "./components/home/home.component";
+import { AboutComponent } from "./components/about/about.component";
+import { ContactsComponent } from "./components/contacts/contacts.component";
+import { FooterComponent } from "./components/footer/footer.component";
+import { ProjectsComponent } from "./components/projects/projects.component";
+import { OptionsComponent } from "./components/options/options.component";
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [FilmComponent,RouterOutlet, HeaderComponent, HomeComponent, AboutComponent, SkillsComponent, ContactsComponent, FooterComponent, ProjectsComponent]
+    imports: [ HttpClientModule, RouterOutlet, HeaderComponent, HomeComponent, AboutComponent, ContactsComponent, FooterComponent, ProjectsComponent, OptionsComponent]
 })
 export class AppComponent {
   title = 'portifolio';

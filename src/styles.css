@@ -1,8 +1,18 @@
 :root {
-    --white: #F8F8FF;
-    --black: #111;
-    --blue: rgb(27, 27, 126);
-    --grey: #696969;
+    --textColor:#444;
+    --backgroundColor:rgb(242, 242, 242);
+    --detailColor:rgba(34, 34, 68, 0.577);
+    --boxColor: rgba(128, 128, 128, 0.091);
+    --backgroundColor2: #0640dfbb;
+    --shadowColor: #0000003e;
+    --boxShadow: 0px 4px 6px var(--shadowColor), 0px 1px 3px var(--shadowColor);
+    --headerColor: #fff;
+    --iconColor: none;
+    --formColor:#fbf9f9;
+    --textColorReverse: #fff;
+    --textTitleColor:#333;
+    --homeBgColor: var(--backgroundColor);
+
 }
 
 body,
@@ -11,55 +21,56 @@ html {
     padding: 0;
     height: 100%;
     width: 100%;
+    transition: color 0.2s ease-in, background-color 0.2s linear, filter 0.2s ease-in;
+
+    color: var(--textColor);
+
+    font-family: "Acme", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+button{
+    border: 1px solid transparent;
+    color: #fff;
+    background-color: var(--backgroundColor2);
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: var(--boxShadow);
+    font-size: medium;
+    padding: 10px;
+
+    font-family: "Acme", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+a, button:hover{
+    cursor: pointer;
+    scale: 105%;
 }
 body{
-    background-color: var(--black);
+    background-color: var(--backgroundColor);
 }
-
-* {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+p{
+    font-size: large;
+    opacity: 0.7;
+    text-align: justify;
 }
-
-section {
-    justify-content: end;
-    height: 50%;
-    color: var(--white);
-    opacity: 0;
-    transition: opacity 1s, visibility 1s;
+h2{
+    font-size: 2.2em;
 }
-
-.anim {
-    display: flex;
-    visibility: visible;
-    opacity: 1;
-}
-button,a:active{
-    scale: 1.1;
-}
-.box{
-    border: 1px solid rgba(0, 0, 0, 0.492);
-    border-radius: 5px;
-    background-color: rgba(1, 2, 92, 0.519);
-    box-shadow: 1px 1px 3px #ffffff72;
-}
-a{
-    cursor: pointer;
+h3{
+    font-size: 1.5rem;
 }
 @media (max-width: 600px) {
-    section{
-        height: 80%;
+    p{
+        font-size: medium;
+        opacity: 0.7;
+        text-align: justify;
     }
-    h1 {
-        font-size: 1.3em;
+    h2{
+        font-size: 2.0em;
     }
-    h2 {
-        font-size: 1.1em;
-    }
-    h3 {
-        font-size: 1em;
-    }
-    h4 {
-        font-size: 0.9em;
+    h3{
+        font-size: 1.3rem;
     }
 }

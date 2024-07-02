@@ -1,0 +1,43 @@
+<section id="contacts" class="contacts-container">
+    <h2>Contate-me</h2>
+
+    <div class="description">
+        <p>Sinta-se à vontade para entrar em contato comigo enviando o formulário abaixo. Responderei o mais breve
+            possível</p>
+    </div>
+
+    <form action="" method="post" #form="ngForm">
+        <app-message #message></app-message>
+
+        <label for="name">Nome</label>
+        <input type="text" name="name" placeholder="Nome completo" min="5" required [(ngModel)]="formData.name" #name="ngModel">
+        <div class="error-message">
+            <span *ngIf="name.invalid && (formInvalid || name.value.length > 0)">Seu nome completo</span>
+        </div>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="Endereço de email" minlength="5" required
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" [(ngModel)]="formData.email" #email="ngModel">
+        <div class="error-message">
+            <span *ngIf="email.invalid && (formInvalid || email.value.length > 0)">O Email deve ser formato usuario&#64;dominio.com!</span>
+        </div>
+
+        <label for="message">Mensagem</label>
+        <textarea name="message" placeholder="Sua mensagem" minlength="20" rows="10" required [(ngModel)]="formData.message"
+            #messageField="ngModel"></textarea>
+        <div class="error-message">
+            <span *ngIf="messageField.invalid && (formInvalid || messageField.value.length > 0)">A Menssagem deve ter no mínimo 20 caracteres!</span>
+        </div>
+
+        <div class="btn-group">
+            <button #btn type="submit"
+            (click)="onBtnClick(form)"
+                [style.background-color]="(form.invalid || (messageField.value && messageField.touched && messageField.value.length < 20)) ? 'red' : ''"
+                >
+                ENVIAR
+            </button>
+        </div>
+    </form>
+
+
+</section>

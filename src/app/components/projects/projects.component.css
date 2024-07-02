@@ -1,0 +1,42 @@
+.projects-container{
+    min-height: 100vh;
+    padding-top: 100px;
+}
+h2{
+    text-align: center;
+}
+.projects{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+.description{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.description p{
+    width: 25%;
+    text-align: center;
+}
+.top{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+}
+.top h3{
+    margin: 0;
+    padding: 0;
+}
+@media (max-width: 600px) {
+    .description p{
+        width: 90%;
+        text-align: center;
+        
+    }
+    .projects-container{
+        padding: 100px 0;
+    }
+}
