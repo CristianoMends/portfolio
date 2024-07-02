@@ -11,6 +11,7 @@
     --formColor:#fbf9f9;
     --textColorReverse: #fff;
     --textTitleColor:#333;
+    --homeBgColor: var(--backgroundColor);
 
 }
 
@@ -20,7 +21,7 @@ html {
     padding: 0;
     height: 100%;
     width: 100%;
-    transition: color 0.5s ease-in, background-color 0.5s ease-in, filter 0.5s ease-in;
+    transition: color 0.2s ease-in, background-color 0.2s linear, filter 0.2s ease-in;
 
     color: var(--textColor);
 
@@ -59,4 +60,17 @@ h2{
 }
 h3{
     font-size: 1.5rem;
+}
+@media (max-width: 600px) {
+    p{
+        font-size: medium;
+        opacity: 0.7;
+        text-align: justify;
+    }
+    h2{
+        font-size: 2.0em;
+    }
+    h3{
+        font-size: 1.3rem;
+    }
 }

@@ -1,50 +1,55 @@
 
-.waves {
+.waves-top {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 50%;
+    top: 0;
     background-color: var(--backgroundColor);
     overflow: hidden;
     z-index: -1;
-    transition: background-color 0.5s ease-in;
+    transition: background-color 0.2s ease-in;
+}
+.waves {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    background-color: var(--backgroundColor);
+    overflow: hidden;
+    z-index: -1;
+    transition: background-color 0.2s ease-in;
+    transform: rotateX(180deg);
 }
 .wave {
     position: absolute;
-    top: 80%;
-    left: 50%;
-    width: 200%;
-    height: 200%;
-    background-color: var(--backgroundColor2);/*rgba(1, 72, 180, 0.421)*/;
-    opacity: 0.3;
-    border-radius: 43%;
-}
-.wave:nth-child(1){
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 0;
+    background-color: var(--homeBgColor);
+    opacity: 0.1;
+}
+.wave:nth-child(1){
+    top: 10%;
+    opacity: 0.1;
 }
 .wave:nth-child(2) {
-    top: 70%;
-    width: 180%;
-    height: 180%;
+    top: 20%;
+    opacity: 0.1;
 }
 
 .wave:nth-child(3) {
-    top: 60%;
-    width: 160%;
-    height: 160%;
+    top: 30%;
+    opacity: 0.05;
 }
-
 /*-----------*/
 .home-container{
+    position: relative;
+    margin-top: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    box-shadow: 2px 2px 3px var(--textColor);
-    
+    height: 95vh;    
 }
 .content{
     scale: 1.1;
@@ -145,8 +150,8 @@ h3{
 .video-container img {
     width: auto;
     height: 100%;
-    filter: contrast(1.5) drop-shadow(2px 2px 3px var(--textColor)) saturate(0.5);
-    transition: transform 0.2s ease-in, filter 0.5s ease-in;
+    filter: contrast(1.5) drop-shadow(2px 2px 3px #111) saturate(0.5);
+    transition: transform 0.2s ease-in, filter 0.2s ease-in;
 }
 
 .video-container img:hover {
@@ -174,8 +179,22 @@ h3{
 }
 
 @media (max-width: 600px) {
+    .content{
+        width: -webkit-fill-available;
+        scale: 1;
+    }
+    .home-container{
+        margin: 0;
+    }
+    
     .video-container{
         display: none;
+    }
+    #name{
+        font-size: xx-large;
+    }
+    .title{
+        width: 80%;
     }
 }
 

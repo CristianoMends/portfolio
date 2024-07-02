@@ -3,7 +3,17 @@
         <div class="btn-container">
             <p class="name">Trocar Tema</p>
             <div class="btn" (click)="switchTheme()">
-                <div [class]="!isDarkTheme ? 'icon start' : 'icon end'">{{ !isDarkTheme ? '🌞' : '🌜' }}</div>
+                <div [class]="!isDarkTheme ? 'icon start' : 'icon end'">
+                    @if (isDarkTheme) {
+                    <span class="">
+                        🌙
+                    </span>
+                    }@else{
+                    <span class="">
+                        🔆
+                    </span>
+                    }
+                </div>
             </div>
         </div>
     </div>

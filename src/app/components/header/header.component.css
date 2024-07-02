@@ -1,5 +1,5 @@
 * {
-    transition: background-color 0.5s ease-in, filter 0.5s ease-in;
+    transition: background-color 0.2s ease-in, filter 0.2s ease-in;
 }
 
 header {
@@ -10,7 +10,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 96vw;
+    width: -webkit-fill-available;
     height: 50px;
     background-color: var(--headerColor);
     z-index: 50;
@@ -43,9 +43,20 @@ a:hover {
     gap: 10px;
 }
 
-.logo img {
-    border-radius: 50%;
+.logo .image img {
+    height: 100%;
     background-size: cover;
+}
+.logo .image{
+    height: 50px;
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, transparent,10%, transparent, 70% , var(--backgroundColor2));
 }
 
 .contact-container {
@@ -60,16 +71,17 @@ svg {
 
 @media (max-width: 600px) {
     header{
+        width: 100%;
         justify-content: center;
+        padding: 15px 0px;
     }
-    .logo img{
-        scale: 0.8;
+    .logo{
+        scale: 0.9;
     }
 
     .logo .name {
         font-size: 1em;
     }
-
     .nav-sections {
         display: flex;
         justify-content: center;
@@ -77,8 +89,16 @@ svg {
         bottom: 0;
         padding: 10px 15px 25px 15px;
         background-color: var(--formColor);
-        width: 100%;
         left: 0;
+        width: -webkit-fill-available;
         gap: 15px;
+    }
+    .contact-container{
+        position: fixed;
+        bottom: 120px;
+        right: 15px;
+        flex-direction: column;
+        opacity: 0.6;
+
     }
 }

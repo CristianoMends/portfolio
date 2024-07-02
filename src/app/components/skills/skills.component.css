@@ -20,7 +20,7 @@ img {
     justify-content: start;
     align-items: center;
     flex-wrap: wrap;
-    width: 90%;
+    width: 50%;
 }
 
 .animation {
@@ -44,5 +44,6 @@ img {
 
     .skills-container div {
         align-items: center;
+        width: 100%;
     }
 }

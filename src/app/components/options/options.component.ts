@@ -33,6 +33,7 @@ export class OptionsComponent {
     this.changeCssVariable('--iconColor','invert(1)');
     this.changeCssVariable('--formColor','#111');
     this.changeCssVariable('--textTitleColor','#ddd');
+    this.changeCssVariable('--homeBgColor','#0044ff');
   }
   setlightTheme(){
     this.changeCssVariable('--backgroundColor', "#faf8f8");
@@ -41,5 +42,6 @@ export class OptionsComponent {
     this.changeCssVariable('--iconColor','none');
     this.changeCssVariable('--formColor','#fff');
     this.changeCssVariable('--textTitleColor','#333');
+    this.changeCssVariable('--homeBgColor','var(--backgroundColor)');
   }
 }
