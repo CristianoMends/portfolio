@@ -7,8 +7,10 @@ import { AfterViewInit, Component, ElementRef, ViewChild, viewChild } from '@ang
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.css'
 })
-export class SkillsComponent implements AfterViewInit {
-  @ViewChild('container') container!: ElementRef;
+export class SkillsComponent {
+ /* @ViewChild('container') container!: ElementRef;
+
+  timeAnimation = 2000
 
   async ngAfterViewInit() {
     try {
@@ -16,7 +18,6 @@ export class SkillsComponent implements AfterViewInit {
 
       while(true){
         await this.addAnimation(images);
-        await this.sleep(1500);
       }
 
     } catch (error) {
@@ -24,10 +25,10 @@ export class SkillsComponent implements AfterViewInit {
     }
   }
   async addAnimation(images: any) {
-    for (const img of images) {
-      (img as HTMLImageElement).classList.add('animation');
-      await this.sleep(500);
-      this.removeAnimation(img)
+    for (const img of images) {     //percorre uma linha de imagens
+      (img as HTMLImageElement).classList.add('animation'); //adiciona a animação q leva 1s para completar
+      await this.sleep(this.timeAnimation / 2);     //espera a metade da animação, quando toca no elemento da frente já começa a animação do proximo 
+      this.removeAnimation(img)   //remove a animação
     }
   }
   sleep(ms: number) {
@@ -35,7 +36,7 @@ export class SkillsComponent implements AfterViewInit {
   }
 
   async removeAnimation(img:HTMLImageElement){
-    await this.sleep(1000);
-    await (img as HTMLImageElement).classList.remove('animation');
-  }
+    await this.sleep(this.timeAnimation); //aguarda até a animação terminar, e tira a classe de animação
+    (img as HTMLImageElement).classList.remove('animation');
+  }*/
 }
