@@ -1,5 +1,6 @@
 .skills-container {
     width: auto;
+    max-width: 500px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -8,9 +9,12 @@
 
 
 .marquee {
-    width: 80%;
+    width: 100%;
     overflow: hidden;
     padding: 10px 0;
+    background-color: var(--formColor);
+    box-shadow: var(--boxShadow);
+    border-radius: 5px;
 }
 
 .marquee-content {
@@ -22,7 +26,6 @@
 .marquee-content img {
     height: 60px;
     margin: 5px;
-    background-color: var(--boxColor);
     border-radius: 10px;
     filter: drop-shadow(2px 2px 3px #111);
     transition: transform 0.2s ease-in-out;
@@ -63,5 +66,8 @@
 @media (max-width: 600px) {
     .marquee-content img {
         height: 35px;
+    }
+    .skills-container {
+        max-width: 90vw;
     }
 }

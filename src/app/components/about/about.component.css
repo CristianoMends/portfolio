@@ -25,22 +25,35 @@
 
 .down {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     width: 100%;
 }
 
 
-.rigth{
-   width: 40%;
-}
-.down{
-   width: 100%;
+.rigth {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /*--------------*/
 
 .left {
     width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left div:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.left div {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,19 +65,6 @@
     background-color: var(--formColor);
 }
 
-.left:hover {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-.left div {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 15px;
-}
-
 .left h3 {
     margin: 10px 0;
 }
@@ -74,22 +74,44 @@
     margin-top: 0;
     line-height: 1.6;
 }
+.certificates{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.previous-certificate{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: 50;
+}
+.next-certificate{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: 50;
+}
 
 @media (max-width: 600px) {
     .top p {
         width: 90%;
     }
-    .down{
+
+    .down {
         width: 100%;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         position: relative;
     }
-    .left{
+
+    .left {
         width: 80%;
     }
-    .rigth{
+
+    .rigth {
         width: 80%;
     }
 }
