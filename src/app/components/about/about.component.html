@@ -7,18 +7,22 @@
     </div>
     <div class="down">
         <div class="left">
+            <h3 class="about-name">Quem sou?</h3>
             <div>
-                <h3 class="about-name">Quem sou?</h3>
                 <p class="about-description">
                     Desde criança, sempre tive interesse em tecnologia. mas, foi no
                     <strong>SENAC</strong>, em 2022, que pude ver isso como uma carreira. No curso de
                     <strong>Programador de Sistemas</strong>, tive acesso a uma base sólida de conhecimento em
-                    <strong>lógica de programação</strong>, além de conceitos de <strong>Java</strong> e <strong>SQL</strong>.
+                    <strong>lógica de programação</strong>, além de conceitos de <strong>Java</strong> e
+                    <strong>SQL</strong>.
                     Atualmente sou estudante de <strong>Engenharia
                         de Software</strong> na <strong>Universidade Federal do Ceará</strong>, e estou sempre buscando
                     aprimorar e adquirir mais conhecimentos na area.
                 </p>
-                <h3 class="about-name">O que faço?</h3>
+            </div>
+
+            <h3 class="about-name">O que faço?</h3>
+            <div>
 
                 <p class="about-description">
                     Tenho experiência em criação de APIs Rest usando <strong>Java 17</strong> com <strong>Spring Boot
@@ -27,40 +31,48 @@
                     utilizando <strong>JWT</strong> e <strong>Spring Security</strong> para segurança de endpoints.
                     Utilizo bancos de dados relacionais como <strong>PostgreSQL</strong>.
                 </p>
-
                 <p class="about-description">
                     Além de desenvolvimento Backend, tenho experiência em desenvolvimento frontend usando
-                    <strong>Angular</strong> e <strong>React</strong>, focando na criação de interfaces responsivas e
-                    interativas. Além disso, possuo habilidades em consumir APIs para integrar dados e funcionalidades
+                    <strong>Angular</strong> e <strong>React</strong>, focando na criação de interfaces responsivas
+                    e
+                    interativas. Além disso, possuo habilidades em consumir APIs para integrar dados e
+                    funcionalidades
                     nos aplicativos que desenvolvo.
                 </p>
+            </div>
 
-
-
-                <h3>Hobbies e Interesses</h3>
-
+            <h3>Hobbies e Interesses</h3>
+            <div>
                 <p class="about-description">
                     Além de programação, tenho alguns hobbies que me ajudam a manter a criatividade e o equilíbrio.
                     Participo de jogos competitivos online, gosto de tocar (ou tentar tocar) violão ou guitarra e
                     praticar atividades ao ar livre, como ciclismo e pesca.
                 </p>
-
-                <h3>Disponibilidade</h3>
-
+            </div>
+            <h3>Disponibilidade</h3>
+            <div>
                 <p class="about-description">
                     Estou aberto a novas oportunidades onde posso aplicar minhas habilidades e continuar aprendendo e
                     crescendo profissionalmente.
                 </p>
-
                 <p class="about-description">
                     Se tiver uma boa oportunidade que corresponda às minhas competências e experiência,
-                    fique á vontade para me contatar. Estou pronto para contribuir positivamente, seja em um ambiente
+                    fique á vontade para me contatar. Estou pronto para contribuir positivamente, seja em um
+                    ambiente
                     corporativo ou em projetos individuais.
                 </p>
             </div>
         </div>
         <div class="rigth">
             <app-skills></app-skills>
+            <div class="certificates">
+                <h3>Certificados</h3>
+                <button class="previous-certificate" (click)="previousCertificate()">
+                    <</button>
+                        <app-certificates [image]="certificates[index].image" [link]="certificates[index].link">
+                        </app-certificates>
+                        <button class="next-certificate" #next (click)="nextCertificate()">></button>
+            </div>
         </div>
     </div>
 </section>
