@@ -1,6 +1,6 @@
 .skills-container {
     width: auto;
-    max-width: 500px;
+    max-width: 600px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -9,6 +9,7 @@
 
 
 .marquee {
+    display: flex;
     width: 100%;
     overflow: hidden;
     padding: 10px 0;
@@ -20,7 +21,7 @@
 .marquee-content {
     display: flex;
     width: max-content;
-    animation: marquee 30s linear infinite;
+    animation: marquee 20s linear infinite;
 }
 
 .marquee-content img {
@@ -37,7 +38,7 @@
 
 @keyframes marquee {
     from {
-        transform: translateX(50%);
+        transform: translateX(0);
     }
     to {
         transform: translateX(-100%);

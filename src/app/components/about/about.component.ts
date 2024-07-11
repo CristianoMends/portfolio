@@ -17,8 +17,8 @@ export class AboutComponent {
 
     certificates = [
         {
-            image: this.imageUrl('QIX6KFRO'),
-            link: this.certificateLink('QIX6KFRO')
+            image:this.imageUrl('WXWVLLLB'),
+            link: this.certificateLink('WXWVLLLB')
         },{
             image:this.imageUrl('WGFLHUXT'),
             link: this.certificateLink('WGFLHUXT')
@@ -32,8 +32,8 @@ export class AboutComponent {
             image: this.imageUrl('FAQXKQSF'),
             link: this.certificateLink('FAQXKQSF')
         },{
-            image:this.imageUrl('WXWVLLLB'),
-            link: this.certificateLink('WXWVLLLB')
+            image: this.imageUrl('QIX6KFRO'),
+            link: this.certificateLink('QIX6KFRO')
         }
     ];
 

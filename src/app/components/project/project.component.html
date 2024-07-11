@@ -4,9 +4,18 @@
         <img *ngIf="mobileImagePath" class="mobile" [src]="mobileImagePath" alt="">
     </div>
     <div class="rigth">
-        <h3 class="project-title">
-            {{name}}
-        </h3>
+        <div class="header">
+            <h3 class="project-title">
+                {{name}}
+            </h3>
+            <h3 [class]="urlProduction ? 'online':'offline'">
+                @if (urlProduction) {
+                    ONLINE 🟢
+                }@else {
+                   OFFLINE 🔴
+                }
+            </h3>
+        </div>
         <p class="project-description">
             {{description}}
         </p>
@@ -16,13 +25,13 @@
         </div>
         <div class="down">
             <button *ngIf="urlVideo" (click)="showPreview(urlVideo)">
-                VISUALIZAR DEMO
+                DEMO
             </button>
             <button *ngIf="urlProduction" (click)="goLink(urlProduction)">
-                ACESSAR SITE
+                PRODUÇÂO
             </button>
             <button *ngIf="urlRepository" (click)="goLink(urlRepository)">
-                VER CÓDIGO
+                REPOSITÓRIO
             </button>
         </div>
     </div>

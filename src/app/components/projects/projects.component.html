@@ -6,7 +6,8 @@
             utilizadas</p>
     </div>
     <div class="projects">
-        <app-project 
+
+        <app-project
             [name]="'The Catalog'"
             [description]="'The Catalog é um Catálogo de produtos que oferece uma maneira intuitiva e eficiente de explorar uma variedade de produtos de várias lojas registradas. Com uma interface amigável e funcionalidade de busca e contato com vendedor, os usuários podem navegar facilmente pelo catálogo, encontrando informações detalhadas sobre cada item.'"
             [technologies]="['Nest.Js', 'Angular 17', 'PostgreSQL', 'Vercel']"
@@ -16,5 +17,25 @@
             [urlProduction]="'https://thecatalog.vercel.app'"
             [urlVideo]="'https://www.youtube.com/embed/nN-u9vPlpdg?si=Ji8T1VeYcE09jx6d&amp&autoplay=1;controls=0'">
         </app-project>
+
+        <app-project 
+            [name]="'AluImoveis API'"
+            [description]="'A Aluimoveis API é uma aplicação desenvolvida em Java usando Spring Boot 3, destinada a facilitar a comunicação e interação entre proprietários de imóveis e usuários interessados em alugar. A aplicação permite que proprietários publiquem imóveis, enquanto usuários podem visualizar, enviar mensagens e interagir com esses anúncios.'"
+            [technologies]="['Java 17', 'Spring Boot 3', 'PostgreSQL','Flyway Migrations', 'OpenApi', 'Swagger UI', 'Azure Blob Storage', 'JWT', 'Spring security']"
+            [pcImagePath]="'../../assets/aluimoveis.png'"
+            [urlRepository]="'https://github.com/CristianoMends/aluimoveis-api'"
+            [urlProduction]="'https://aluimoveis-api-production.up.railway.app/swagger-ui/index.html'"
+            >
+        </app-project>
+
+        <app-project 
+            [name]="'Pizzaria API'"
+            [description]="'Este é um projeto de uma API para gerenciar uma pizzaria, construída com Spring Boot. A API permite a manipulação de informações sobre pizzas e pedidos.'"
+            [technologies]="['Java 17', 'Spring Boot 3', 'PostgreSQL','Flyway Migrations', 'OpenApi', 'Swagger UI', 'JUnit5']"
+            [pcImagePath]="'../../assets/pizzaria.png'"
+            [urlRepository]="'https://github.com/CristianoMends/pizzaria-api'"
+            >
+        </app-project>
+    
     </div>
 </section>
