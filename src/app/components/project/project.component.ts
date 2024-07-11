@@ -18,6 +18,7 @@ export class ProjectComponent {
   @Input() urlRepository: string = '';
   @Input() urlProduction: string = '';
   @Input() urlVideo: string = '';
+  
 
   constructor( private preview: PreviewComponent
   ){
