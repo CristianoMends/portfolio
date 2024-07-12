@@ -17,7 +17,7 @@
                     <strong>SQL</strong>.
                     Atualmente sou estudante de <strong>Engenharia
                         de Software</strong> na <strong>Universidade Federal do Ceará</strong>, e estou sempre buscando
-                    aprimorar e adquirir mais conhecimentos na area.
+                    aprimorar e adquirir mais conhecimentos na área.
                 </p>
             </div>
 
@@ -29,7 +29,9 @@
                         3</strong>, incluindo testes unitários com <strong>JUnit</strong> e <strong>Mockito</strong>,
                     documentação com <strong>OpenApi</strong> e <strong>Swagger UI</strong>, autenticação e autorização
                     utilizando <strong>JWT</strong> e <strong>Spring Security</strong> para segurança de endpoints.
-                    Utilizo bancos de dados relacionais como <strong>PostgreSQL</strong>.
+                    Utilizo <strong>Spring Data JPA</strong> para realizar CRUD em bancos de dados relacionais como
+                    <strong>PostgreSQL</strong>,
+                    e <strong>Flyway Migrations</strong> para manter o versionamento do banco.
                 </p>
                 <p class="about-description">
                     Além de desenvolvimento Backend, tenho experiência em desenvolvimento frontend usando
@@ -45,8 +47,9 @@
             <div>
                 <p class="about-description">
                     Além de programação, tenho alguns hobbies que me ajudam a manter a criatividade e o equilíbrio.
-                    Participo de jogos competitivos online, gosto de tocar (ou tentar tocar) violão ou guitarra e
-                    praticar atividades ao ar livre, como ciclismo e pesca.
+                    Participo de jogos competitivos online, gosto de tocar instrumentos musicais como violão ou guitarra
+                    e
+                    praticar atividades ao ar livre.
                 </p>
             </div>
             <h3>Disponibilidade</h3>
@@ -65,13 +68,15 @@
         </div>
         <div class="rigth">
             <app-skills></app-skills>
-            <div class="certificates">
+            <div class="certificates" #container>
                 <h3>Certificados</h3>
-                <button class="previous-certificate" (click)="previousCertificate()">
-                    <</button>
-                        <app-certificates [image]="certificates[index].image" [link]="certificates[index].link">
-                        </app-certificates>
-                        <button class="next-certificate" #next (click)="nextCertificate()">></button>
+                <button class="previous-certificate" (click)="previousCertificate()"><</button>
+                    <div class="content" #content>
+                        @for (item of certificates; track $index) {
+                            <app-certificates [image]="item.image" [link]="item.link"></app-certificates>
+                        }
+                    </div>
+                <button class="next-certificate" (click)="nextCertificate()">></button>
             </div>
         </div>
     </div>

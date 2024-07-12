@@ -10,7 +10,6 @@ import { Component, Input } from '@angular/core';
 })
 export class CertificatesComponent {
 
-  @Input() title!:string;
   @Input() image!:string;
   @Input() link!:string;
 
