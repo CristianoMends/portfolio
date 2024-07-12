@@ -3,10 +3,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 0 25px;
-
+    padding: 0 50px;
+    width: 500px;
 }
-
 
 .content {
     display: flex;
@@ -31,4 +30,11 @@ img {
 img:hover {
     cursor: pointer;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 0 5vw;
+        width: 70vw;
+    }
 }

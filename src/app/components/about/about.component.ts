@@ -1,60 +1,81 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { SkillsComponent } from "../skills/skills.component";
 import { CertificatesComponent } from '../certificates/certificates.component';
-import { link } from 'node:fs';
+import { NgFor } from '@angular/common';
 
 @Component({
     selector: 'app-about',
     standalone: true,
     templateUrl: './about.component.html',
     styleUrl: './about.component.css',
-    imports: [SkillsComponent, CertificatesComponent]
+    imports: [SkillsComponent, CertificatesComponent, NgFor]
 })
-export class AboutComponent {
+export class AboutComponent implements AfterViewInit {
 
-    @ViewChild('next') next!: ElementRef;
-    index = 0;
+    @ViewChild('content') content!: ElementRef;
+    @ViewChild('container') container!: ElementRef;
 
+    containerWidth!: number;
+    contentWidth!: number
+
+    ngAfterViewInit() {
+        this.containerWidth = this.container.nativeElement.offsetWidth;
+        this.contentWidth = this.content.nativeElement.offsetWidth;
+
+    }
     certificates = [
         {
-            image:this.imageUrl('WXWVLLLB'),
-            link: this.certificateLink('WXWVLLLB')
-        },{
-            image:this.imageUrl('WGFLHUXT'),
-            link: this.certificateLink('WGFLHUXT')
-        },{
-            image: this.imageUrl('VOELTNY6'),
-            link: this.certificateLink('VOELTNY6')
-        },{
-            image: this.imageUrl('RNOYOB0K'),
-            link: this.certificateLink('RNOYOB0K')
-        },{
-            image: this.imageUrl('FAQXKQSF'),
-            link: this.certificateLink('FAQXKQSF')
-        },{
+            image: this.imageUrl('NWIGU2DS'),
+            link: this.certificateLink('NWIGU2DS')
+
+        }, {
             image: this.imageUrl('QIX6KFRO'),
             link: this.certificateLink('QIX6KFRO')
+        }, {
+            image: this.imageUrl('WXWVLLLB'),
+            link: this.certificateLink('WXWVLLLB')
+        }, {
+            image: this.imageUrl('WGFLHUXT'),
+            link: this.certificateLink('WGFLHUXT')
+        }, {
+            image: this.imageUrl('VOELTNY6'),
+            link: this.certificateLink('VOELTNY6')
+        }, {
+            image: this.imageUrl('RNOYOB0K'),
+            link: this.certificateLink('RNOYOB0K')
+        }, {
+            image: this.imageUrl('FAQXKQSF'),
+            link: this.certificateLink('FAQXKQSF')
         }
     ];
 
+    currentPosition = 0;
+
+    updatePosition() {
+
+        if (this.currentPosition <= -this.contentWidth) {
+            this.currentPosition = 0; // Volta ao início
+        } else if (this.currentPosition >= 0) {
+            this.currentPosition = -this.contentWidth + this.containerWidth; // Volta ao final
+        }
+
+        this.content.nativeElement.style.transform = `translateX(${this.currentPosition}px)`;
+    }
 
     nextCertificate() {
-        this.index++;
-        if(this.index >= this.certificates.length){
-            this.index = 0;
-        }
-    }
-    previousCertificate(){
-        this.index--;
-        if(this.index < 0){
-           this.index = this.certificates.length - 1;     
-        }
+        this.currentPosition -= this.containerWidth;
+        this.updatePosition();
     }
 
-    imageUrl(certificateNumber:string){
+    previousCertificate() {
+        this.currentPosition += this.containerWidth;
+        this.updatePosition();
+    }
+
+    imageUrl(certificateNumber: string) {
         return `https://hermes.dio.me/certificates/cover/${certificateNumber}.jpg`;
     }
-    certificateLink(name:string){
+    certificateLink(name: string) {
         return `https://www.dio.me/certificate/${name}/share`
     }
 
