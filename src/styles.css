@@ -1,16 +1,16 @@
 :root {
-    --textColor:#444;
-    --backgroundColor:rgb(242, 242, 242);
-    --detailColor:rgba(34, 34, 68, 0.577);
+    --textColor: #444;
+    --backgroundColor: rgb(242, 242, 242);
+    --detailColor: rgba(34, 34, 68, 0.577);
     --boxColor: rgba(128, 128, 128, 0.091);
     --backgroundColor2: #0640dfbb;
     --shadowColor: #0000003e;
     --boxShadow: 0px 4px 6px var(--shadowColor), 0px 1px 3px var(--shadowColor);
     --headerColor: #fff;
     --iconColor: none;
-    --formColor:#fbf9f9;
+    --formColor: #fbf9f9;
     --textColorReverse: #fff;
-    --textTitleColor:#333;
+    --textTitleColor: #333;
     --homeBgColor: var(--backgroundColor);
 
 }
@@ -29,7 +29,20 @@ html {
     font-weight: 400;
     font-style: normal;
 }
-button{
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--backgroundColor2);
+    border-radius: 10px;
+}
+button {
     border: 1px solid transparent;
     color: #fff;
     background-color: var(--backgroundColor2);
@@ -43,37 +56,47 @@ button{
     font-weight: 400;
     font-style: normal;
 }
-a, button:hover{
+
+a,
+button:hover {
     cursor: pointer;
     scale: 105%;
 }
-body{
+
+body {
     background-color: var(--backgroundColor);
 }
-p{
+
+p {
     font-size: large;
     opacity: 0.7;
     text-align: justify;
 }
-h2{
+
+h2 {
     font-size: 2.2em;
 }
-h3{
+
+h3 {
     font-size: 1.5rem;
 }
-h4{
-    font-size: 1.2rem;    
+
+h4 {
+    font-size: 1.2rem;
 }
+
 @media (max-width: 600px) {
-    p{
+    p {
         font-size: medium;
         opacity: 0.7;
         text-align: justify;
     }
-    h2{
+
+    h2 {
         font-size: 2.0em;
     }
-    h3{
+
+    h3 {
         font-size: 1.3rem;
     }
 }
