@@ -48,10 +48,6 @@
     flex-direction: column;
 }
 
-.left div:hover {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
 .left div {
     width: 100%;
     display: flex;
@@ -60,7 +56,6 @@
     align-items: flex-start;
     padding: 20px;
     border-radius: 10px;
-    transition: background-color 0.2s ease-in, box-shadow 0.2s ease;
 }
 
 .left h3 {

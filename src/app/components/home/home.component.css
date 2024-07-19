@@ -111,7 +111,7 @@ h3{
     text-align: center;
 }
 .visible {
-    transition: all 1s ease-out;
+    transition: all 1.5s ease-in-out;
 }
 .invisible {
     overflow: hidden;
