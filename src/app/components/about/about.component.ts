@@ -25,16 +25,24 @@ export class AboutComponent implements AfterViewInit {
     }
     certificates = [
         {
-            image: this.imageUrl('NWIGU2DS'),
+            image: this.imageUrl('NWIGU2DS'),       //backend com java
             link: this.certificateLink('NWIGU2DS')
-
-        }, {
-            image: this.imageUrl('QIX6KFRO'),
+        },{
+            image: this.imageUrl('QIX6KFRO'),       //santander backend com java
             link: this.certificateLink('QIX6KFRO')
-        }, {
+        },{
+            image: this.imageUrl('RBPCJ8RW'),       //java com IA
+            link: this.certificateLink('RBPCJ8RW')
+        },{
+            image: this.imageUrl('EQTP2490'),
+            link: this.certificateLink('EQTP2490')
+        },{
+            image: this.imageUrl('6BAD5E05'),
+            link: this.certificateLink('6BAD5E05')
+        },{
             image: this.imageUrl('WXWVLLLB'),
             link: this.certificateLink('WXWVLLLB')
-        }, {
+        },{
             image: this.imageUrl('WGFLHUXT'),
             link: this.certificateLink('WGFLHUXT')
         }, {
@@ -55,7 +63,7 @@ export class AboutComponent implements AfterViewInit {
 
         if (this.currentPosition <= -this.contentWidth) {
             this.currentPosition = 0; // Volta ao início
-        } else if (this.currentPosition >= 0) {
+        } else if (this.currentPosition > 0) {
             this.currentPosition = -this.contentWidth + this.containerWidth; // Volta ao final
         }
 
