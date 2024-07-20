@@ -21,7 +21,6 @@ export class AboutComponent implements AfterViewInit {
     ngAfterViewInit() {
         this.containerWidth = this.container.nativeElement.offsetWidth;
         this.contentWidth = this.content.nativeElement.offsetWidth;
-
     }
     certificates = [
         {
