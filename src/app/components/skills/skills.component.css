@@ -13,8 +13,8 @@
     width: 100%;
     overflow: hidden;
     padding: 10px 0;
-    background-color: var(--formColor);
-    box-shadow: var(--boxShadow);
+    border-left: 3px solid var(--boxColor);
+    border-right: 3px solid var(--boxColor);
     border-radius: 5px;
 }
 
