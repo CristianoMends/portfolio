@@ -76,6 +76,7 @@
     flex-direction: column;
     width: 600px;
     overflow: hidden;
+    padding: 35px 0;
 }
 
 .certificates h3 {
@@ -97,12 +98,43 @@
     z-index: 40;
 }
 
-.certificates div {
+.certificates .content {
     display: flex;
 }
 
 .certificates .content {
     transition: transform 1s ease-out;
+}
+
+.indicators {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.indicators .dot {
+    background: transparent;
+    border: 1px solid var(--backgroundColor2);
+    border-radius: 50%;
+    overflow: hidden;
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+    cursor: pointer;
+
+    &:active{
+        scale: 1.1;
+      }
+      
+      &.show{
+        background-color: var(--backgroundColor2);
+      }
+    
+      &:focus {
+        outline: none;
+      }
 }
 
 @media (max-width: 600px) {
@@ -125,7 +157,8 @@
     .rigth {
         width: 80%;
     }
-    .certificates{
+
+    .certificates {
         width: 100%;
     }
 }

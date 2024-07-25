@@ -56,27 +56,23 @@ export class AboutComponent implements AfterViewInit {
         }
     ];
 
-    currentPosition = 0;
+    currentIndex = 0;
 
-    updatePosition() {
+    selectCertificate(index:number){
+        this.containerWidth = this.container.nativeElement.offsetWidth;
+        this.contentWidth = this.content.nativeElement.offsetWidth;
+        this.currentIndex = index;
 
-        if (this.currentPosition <= -this.contentWidth) {
-            this.currentPosition = 0; // Volta ao início
-        } else if (this.currentPosition > 0) {
-            this.currentPosition = -this.contentWidth + this.containerWidth; // Volta ao final
-        }
-
-        this.content.nativeElement.style.transform = `translateX(${this.currentPosition}px)`;
+        this.content.nativeElement.style.transform = `translateX(${-this.containerWidth * index}px)`;
     }
 
     nextCertificate() {
-        this.currentPosition -= this.containerWidth;
-        this.updatePosition();
+        this.selectCertificate(++this.currentIndex);
+
     }
 
     previousCertificate() {
-        this.currentPosition += this.containerWidth;
-        this.updatePosition();
+        this.selectCertificate(--this.currentIndex);
     }
 
     imageUrl(certificateNumber: string) {

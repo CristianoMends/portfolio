@@ -70,13 +70,16 @@
             <app-skills></app-skills>
             <div class="certificates" #container>
                 <h3>Certificados</h3>
-                <button class="previous-certificate" (click)="previousCertificate()"><</button>
+                <button class="previous-certificate" [style]="currentIndex <= 0 ? 'display: none;':''" (click)="previousCertificate()"><</button>
                     <div class="content" #content>
                         @for (item of certificates; track $index) {
                             <app-certificates [image]="item.image" [link]="item.link"></app-certificates>
                         }
                     </div>
-                <button class="next-certificate" (click)="nextCertificate()">></button>
+                    <div class="indicators">
+                            <div *ngFor="let item of certificates; let i=index" [class]="currentIndex === i ? 'dot show':'dot'" id={{i}} (click)="selectCertificate(i)"></div>                        
+                    </div>
+                <button class="next-certificate" [style]="currentIndex >= certificates.length -1 ? 'display: none;':''" (click)="nextCertificate()">></button>
             </div>
         </div>
     </div>
