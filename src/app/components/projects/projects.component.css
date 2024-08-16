@@ -1,6 +1,7 @@
 .projects-container{
     min-height: 100vh;
     padding-top: 100px;
+    background-color: var(--backgroundColor);
 }
 h2{
     text-align: center;
