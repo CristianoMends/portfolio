@@ -12,8 +12,17 @@
     --textColorReverse: #fff;
     --textTitleColor: #333;
     --homeBgColor: var(--backgroundColor);
-
 }
+
+/*
+    this.changeCssVariable('--backgroundColor', "#272727");
+    this.changeCssVariable('--textColor', '#faf8f8');
+    this.changeCssVariable('--headerColor', '#111');
+    this.changeCssVariable('--iconColor', 'invert(1)');
+    this.changeCssVariable('--formColor', '#111');
+    this.changeCssVariable('--textTitleColor', '#ddd');
+    this.changeCssVariable('--homeBgColor', '#0044ff');
+*/
 
 body,
 html {

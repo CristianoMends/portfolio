@@ -18,7 +18,7 @@ export class HomeComponent implements AfterViewInit {
   @ViewChild('contact') contact!: ElementRef;
 
   async ngAfterViewInit() {
-    await this.sleep(500);
+    await this.sleep(1000);
     const elements: ElementRef[] = [this.hello, this.name];
     this.typeWriterEffect(elements);
   }
