@@ -63,7 +63,7 @@ export class HomeComponent implements AfterViewInit {
     });
   }
   downloadCv() {
-    
+
     const url = 'https://drive.google.com/file/d/1z5rFV9LTeYsNcN8Ny2LBrY_ZtFbMYOXu/view?usp=drive_link';
     window.open(url, '_blank');
   }

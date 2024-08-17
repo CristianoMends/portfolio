@@ -1,17 +1,22 @@
 :root {
-    --textColor: #444;
-    --backgroundColor: rgb(242, 242, 242);
     --detailColor: rgba(34, 34, 68, 0.577);
     --boxColor: rgba(128, 128, 128, 0.091);
-    --backgroundColor2: #0640dfbb;
+    --backgroundColor2: #1b3fa3bb;
     --shadowColor: #0000003e;
     --boxShadow: 0px 4px 6px var(--shadowColor), 0px 1px 3px var(--shadowColor);
-    --headerColor: #fff;
-    --iconColor: none;
-    --formColor: #fbf9f9;
     --textColorReverse: #fff;
-    --textTitleColor: #333;
-    --homeBgColor: var(--backgroundColor);
+
+    --formColor: #111;
+    --iconColor: invert(1);
+    --headerColor: #111;
+    --textColor: #faf8f8;
+    --textTitleColor: #ddd;
+    --homeBgColor: #0044ff;
+    --backgroundColor: #272727;
+}
+
+* {
+    transition: background-color 0.2s ease-in-out, filter 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 /*
@@ -20,7 +25,6 @@
     this.changeCssVariable('--headerColor', '#111');
     this.changeCssVariable('--iconColor', 'invert(1)');
     this.changeCssVariable('--formColor', '#111');
-    this.changeCssVariable('--textTitleColor', '#ddd');
     this.changeCssVariable('--homeBgColor', '#0044ff');
 */
 
@@ -30,13 +34,13 @@ html {
     padding: 0;
     height: 100%;
     width: 100%;
-    transition: color 0.2s ease-in, background-color 0.2s linear, filter 0.2s ease-in;
 
     color: var(--textColor);
 
     font-family: "Acme", sans-serif;
     font-weight: 400;
     font-style: normal;
+    background-color: #111;
 }
 
 body::-webkit-scrollbar {
@@ -48,13 +52,14 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-    background: var(--backgroundColor2);
+    background: #1b3fa3bb;
     border-radius: 10px;
 }
+
 button {
     border: 1px solid transparent;
     color: #fff;
-    background-color: var(--backgroundColor2);
+    background-color: #1b3fa3bb;
     text-decoration: none;
     border-radius: 5px;
     box-shadow: var(--boxShadow);
@@ -72,9 +77,6 @@ button:hover {
     scale: 105%;
 }
 
-body {
-    background-color: var(--backgroundColor);
-}
 
 p {
     font-size: large;
@@ -94,7 +96,11 @@ h4 {
     font-size: 1.2rem;
 }
 
-h1,h2,h3,h4,h5{
+h1,
+h2,
+h3,
+h4,
+h5 {
     text-transform: uppercase;
 }
 

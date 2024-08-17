@@ -8,15 +8,10 @@ import { AfterViewInit, Component, Inject, PLATFORM_ID } from '@angular/core';
   templateUrl: './options.component.html',
   styleUrl: './options.component.css'
 })
-export class OptionsComponent implements AfterViewInit {
+export class OptionsComponent {
   constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
 
-  ngAfterViewInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      this.switchTheme();
-    }
-  }
-  isDarkTheme = false;
+  isDarkTheme = true;
 
   changeCssVariable(variable: string, value: string): void {
     document.documentElement.style.setProperty(variable, value);
@@ -42,6 +37,7 @@ export class OptionsComponent implements AfterViewInit {
     this.changeCssVariable('--formColor', '#111');
     this.changeCssVariable('--textTitleColor', '#ddd');
     this.changeCssVariable('--homeBgColor', '#0044ff');
+    this.changeCssVariable('--backgroundColor2', '#1b3fa3bb');
   }
   setlightTheme() {
     this.changeCssVariable('--backgroundColor', "#faf8f8");
@@ -51,6 +47,7 @@ export class OptionsComponent implements AfterViewInit {
     this.changeCssVariable('--formColor', '#fff');
     this.changeCssVariable('--textTitleColor', '#333');
     this.changeCssVariable('--homeBgColor', 'var(--backgroundColor)');
+    this.changeCssVariable('--backgroundColor2', '#fbf9f9');
   }
 
 }

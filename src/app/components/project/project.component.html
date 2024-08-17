@@ -1,7 +1,7 @@
 <div class="project">
     <div class="left">
-        <img *ngIf="pcImagePath" class="pc" [src]="pcImagePath" alt="">
-        <img *ngIf="mobileImagePath" class="mobile" [src]="mobileImagePath" alt="">
+        <img *ngIf="pcImagePath" class="pc" [src]="pcImagePath" alt="{{name}}" loading="lazy">
+        <img *ngIf="mobileImagePath" class="mobile" [src]="mobileImagePath" alt="{{name}}" loading="lazy">
     </div>
     <div class="rigth">
         <div class="header">

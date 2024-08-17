@@ -5,6 +5,7 @@
     align-items: center;
     padding-top: 100px;
     min-height: 100vh;
+    background-color: var(--backgroundColor2);
 }
 
 .top {
@@ -77,6 +78,8 @@
     width: 600px;
     overflow: hidden;
     padding: 35px 0;
+    margin-bottom: 10px;
+
 }
 
 .certificates h3 {
@@ -116,7 +119,8 @@
 
 .indicators .dot {
     background: transparent;
-    border: 1px solid var(--backgroundColor2);
+    border: 1px solid var(--textColor);
+    box-shadow: 1px 2px 3px black;
     border-radius: 50%;
     overflow: hidden;
     width: 10px;
@@ -129,7 +133,7 @@
       }
       
       &.show{
-        background-color: var(--backgroundColor2);
+        background-color: var(--textColor);
       }
     
       &:focus {

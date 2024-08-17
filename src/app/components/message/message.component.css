@@ -14,6 +14,7 @@
     box-shadow: var(--boxShadow);
     opacity: 0;
     animation: fadein 0.2s linear forwards;
+    color: #111;
 }
 @keyframes fadein {
     0%{opacity: 0;}100%{
