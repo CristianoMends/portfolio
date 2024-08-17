@@ -5,6 +5,7 @@
     flex-direction: column;
     padding: 0 50px;
     width: 500px;
+    margin-bottom: 10px;
 }
 
 .content {

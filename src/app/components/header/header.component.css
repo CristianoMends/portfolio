@@ -68,6 +68,9 @@ a:hover {
 svg {
     filter: var(--iconColor);
 }
+svg:hover{
+    filter: brightness(0) saturate(100%) invert(53%) sepia(78%) saturate(7492%) hue-rotate(195deg) brightness(75%) contrast(106%)
+}
 
 @media (max-width: 600px) {
     header{

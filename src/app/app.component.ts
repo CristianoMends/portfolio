@@ -8,13 +8,14 @@ import { FooterComponent } from "./components/footer/footer.component";
 import { ProjectsComponent } from "./components/projects/projects.component";
 import { OptionsComponent } from "./components/options/options.component";
 import { HttpClientModule } from '@angular/common/http';
+import { MainComponent } from "./pages/main/main.component";
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [ HttpClientModule, RouterOutlet, HeaderComponent, HomeComponent, AboutComponent, ContactsComponent, FooterComponent, ProjectsComponent, OptionsComponent]
+    imports: [HttpClientModule, RouterOutlet, HeaderComponent, HomeComponent, AboutComponent, ContactsComponent, FooterComponent, ProjectsComponent, OptionsComponent, MainComponent]
 })
 export class AppComponent {
   title = 'portifolio';
