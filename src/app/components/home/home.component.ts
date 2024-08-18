@@ -31,23 +31,16 @@ export class HomeComponent implements AfterViewInit {
       element.className = 'typing-text'
 
       for (let char in text) {
-
         element.textContent += text.charAt(char);
-        if (element.textContent == text) {
-          element.className = '';
-
-          if (i == textElements.length - 1) {
-            element.className = 'typing-text visible'
-            this.video.nativeElement.className = 'video-container visible';
-            this.cv.nativeElement.className = 'cv';
-            this.contact.nativeElement.className = 'cv-container visible'
-          }
-        }
-
-        await this.sleep(50);
+        await this.sleep(50);//espera 50ms antes da proxima letra
       }
       await this.sleep(100);
 
+      if (i == textElements.length - 1) {
+        this.video.nativeElement.className = 'video-container visible';
+        this.cv.nativeElement.className = 'cv';
+        this.contact.nativeElement.className = 'cv-container visible'
+      }
     }
   }
   sleep(ms: number) {

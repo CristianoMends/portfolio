@@ -12,12 +12,24 @@
     scale: 1.1;
     overflow: visible;
     width: 60%;
-    height: 25%;
+    height: 30%;
+    border: 1px solid #f0f8ff1c;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     gap: 25px;
     flex-direction: row;
-    padding: 10px 0;
+    padding: 50px 0;
+    box-shadow: var(--boxShadow);
+    animation: fade-in 0.5s linear forwards;
+}
+@keyframes fade-in {
+    from{visibility: hidden;}
+    to{visibility: visible;}
+}
+
+#hello{
+    transform: translateY(10px);
 }
 
 .title {
@@ -51,8 +63,9 @@ h3 {
 .cv-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: start;
+    height: 100%;
 }
 
 .description {
@@ -151,6 +164,9 @@ h3 {
     display: inline-block;
     animation: blink-caret 0.5s step-end infinite;
 }
+.cv{
+    margin: 0 25%;
+}
 
 .title-text h1,
 h3,
@@ -161,7 +177,7 @@ p {
 
 @media (max-width: 600px) {
     .content {
-        width: -webkit-fill-available;
+        width: 95%;
         scale: 1;
     }
 
