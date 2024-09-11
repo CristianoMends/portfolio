@@ -19,15 +19,6 @@
     transition: background-color 0.2s ease-in-out, filter 0.2s ease-in-out;
 }
 
-/*
-    this.changeCssVariable('--backgroundColor', "#272727");
-    this.changeCssVariable('--textColor', '#faf8f8');
-    this.changeCssVariable('--headerColor', '#111');
-    this.changeCssVariable('--iconColor', 'invert(1)');
-    this.changeCssVariable('--formColor', '#111');
-    this.changeCssVariable('--homeBgColor', '#0044ff');
-*/
-
 body,
 html {
     margin: 0;
@@ -43,15 +34,15 @@ html {
     background-color: #111;
 }
 
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
     width: 5px;
 }
 
-body::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     background: transparent;
 }
 
-body::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background: #1b3fa3bb;
     border-radius: 10px;
 }
@@ -74,7 +65,7 @@ button {
 a,
 button:hover {
     cursor: pointer;
-    scale: 105%;
+    scale: 1.1;
 }
 
 
@@ -94,14 +85,6 @@ h3 {
 
 h4 {
     font-size: 1.2rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-    text-transform: uppercase;
 }
 
 @media (max-width: 600px) {

@@ -13,6 +13,9 @@
     width: 25%;
     text-align: center;
 }
+button:hover{
+    background-color: #112764bb;
+}
 .left{
     display: flex;
     align-items: end;
@@ -99,7 +102,7 @@
     width: 100%;
 }
 .offline{
-    color: red;
+    color: rgba(194, 13, 13, 0.986);
     padding: 5px;
     border-radius: 5px;
     font-size: larger;

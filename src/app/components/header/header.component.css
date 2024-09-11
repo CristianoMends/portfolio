@@ -1,5 +1,5 @@
 * {
-    transition: background-color 0.2s ease-in, filter 0.2s ease-in;
+    transition: background-color 0.2s ease-in, filter 0.2s ease-in, transform 0.1s ease-in;
 }
 
 header {
@@ -22,17 +22,20 @@ nav {
     gap: 25px;
 }
 
-a {
+.btn{
     font-weight: bold;
     font-size: large;
     text-transform: uppercase;
 
     border: 1px solid transparent;
     font-weight: bold;
+
 }
 
-a:hover {
+.btn:hover {
     color: #1b3fa3bb;
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .logo {
@@ -58,6 +61,17 @@ a:hover {
     align-items: center;
     background: linear-gradient(to bottom, transparent,10%, transparent, 70% , #1b3fa3bb);
 }
+.logo .name {
+    font-weight: bold;
+    font-size: large;
+    border: 1px solid transparent;
+    font-weight: bold;
+}
+.logo:hover{
+    cursor: pointer;
+    color: #1b3fa3bb;
+    transform: scale(1.1);
+}
 
 .contact-container {
     display: flex;
@@ -69,7 +83,8 @@ svg {
     filter: var(--iconColor);
 }
 svg:hover{
-    filter: brightness(0) saturate(100%) invert(43%) sepia(78%) saturate(7492%) hue-rotate(195deg) brightness(75%) contrast(106%)
+    filter: brightness(0) saturate(100%) invert(43%) sepia(78%) saturate(7492%) hue-rotate(195deg) brightness(55%) contrast(106%);
+    transform: scale(1.1);
 }
 
 @media (max-width: 600px) {

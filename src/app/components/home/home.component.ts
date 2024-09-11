@@ -13,7 +13,7 @@ export class HomeComponent implements AfterViewInit {
 
   @ViewChild('hello') hello!: ElementRef;
   @ViewChild('name') name!: ElementRef;
-  @ViewChild('video') video!: ElementRef;
+  //@ViewChild('video') video!: ElementRef;
   @ViewChild('cv') cv!: ElementRef;
   @ViewChild('contact') contact!: ElementRef;
 
@@ -37,7 +37,7 @@ export class HomeComponent implements AfterViewInit {
       await this.sleep(100);
 
       if (i == textElements.length - 1) {
-        this.video.nativeElement.className = 'video-container visible';
+        //this.video.nativeElement.className = 'video-container visible';
         this.cv.nativeElement.className = 'cv';
         this.contact.nativeElement.className = 'cv-container visible'
       }
