@@ -1,14 +1,16 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { SkillsComponent } from "../skills/skills.component";
 import { CertificatesComponent } from '../certificates/certificates.component';
-import { NgFor } from '@angular/common';
+import { NgFor, NgForOf } from '@angular/common';
+import { PublicationsComponent } from "../publications/publications.component";
+import { link } from 'fs';
 
 @Component({
     selector: 'app-about',
     standalone: true,
     templateUrl: './about.component.html',
     styleUrl: './about.component.css',
-    imports: [SkillsComponent, CertificatesComponent, NgFor]
+    imports: [SkillsComponent, CertificatesComponent, NgFor, PublicationsComponent, NgForOf]
 })
 export class AboutComponent implements AfterViewInit {
 
@@ -32,31 +34,25 @@ export class AboutComponent implements AfterViewInit {
         },{
             image: this.imageUrl('RBPCJ8RW'),       //java com IA
             link: this.certificateLink('RBPCJ8RW')
+        }
+    ];
+
+    publicationsLinks = [
+        {
+            link: 'https://www.linkedin.com/embed/feed/update/urn:li:share:7230374378935353344'
+        },
+        {
+            link: 'https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7208156403272712193'
+        },
+        {
+            link: 'https://www.linkedin.com/embed/feed/update/urn:li:share:7216769073160867842'
         },{
-            image: this.imageUrl('EQTP2490'),
-            link: this.certificateLink('EQTP2490')
-        },{
-            image: this.imageUrl('6BAD5E05'),
-            link: this.certificateLink('6BAD5E05')
-        },{
-            image: this.imageUrl('WXWVLLLB'),
-            link: this.certificateLink('WXWVLLLB')
-        },{
-            image: this.imageUrl('WGFLHUXT'),
-            link: this.certificateLink('WGFLHUXT')
-        }, {
-            image: this.imageUrl('VOELTNY6'),
-            link: this.certificateLink('VOELTNY6')
-        }, {
-            image: this.imageUrl('RNOYOB0K'),
-            link: this.certificateLink('RNOYOB0K')
-        }, {
-            image: this.imageUrl('FAQXKQSF'),
-            link: this.certificateLink('FAQXKQSF')
+            link: 'https://www.linkedin.com/embed/feed/update/urn:li:share:7207142379999358976'
         }
     ];
 
     currentIndex = 0;
+    currentPubIndex = 0;
 
     selectCertificate(index:number){
         this.containerWidth = this.container.nativeElement.offsetWidth;
@@ -73,6 +69,18 @@ export class AboutComponent implements AfterViewInit {
 
     previousCertificate() {
         this.selectCertificate(--this.currentIndex);
+    }
+
+    selectPublication(index: number) {
+        this.currentPubIndex = index;
+    }
+
+    nextPublication() {
+        this.selectPublication(++this.currentPubIndex);
+    }
+
+    previousPublication() {
+        this.selectPublication(--this.currentPubIndex);
     }
 
     imageUrl(certificateNumber: string) {

@@ -9,23 +9,17 @@
 }
 
 .content {
-    scale: 1.1;
+    scale: 1.2;
     overflow: visible;
-    width: 60%;
+    width: max-content;
     height: 30%;
-    border: 1px solid #f0f8ff1c;
     border-radius: 10px;
     display: flex;
     justify-content: center;
+    align-items: start;
     gap: 25px;
     flex-direction: row;
     padding: 50px 0;
-    box-shadow: var(--boxShadow);
-    animation: fade-in 0.5s linear forwards;
-}
-@keyframes fade-in {
-    from{visibility: hidden;}
-    to{visibility: visible;}
 }
 
 #hello{
@@ -33,7 +27,7 @@
 }
 
 .title {
-    width: 50%;
+    width: max-content;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -56,28 +50,23 @@ h3 {
     padding: 0;
 }
 
-#hello {
-    text-transform: uppercase;
-}
-
 .cv-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
-    height: 100%;
+    max-width: 350px;
+    max-height: 150px;
+    opacity: 1;
+    scale: 1;
 }
 
 .description {
-    width: 100%;
+    width: max-content;
     margin-top: 0;
     text-align: start;
-    max-inline-size: 60%;
+    max-inline-size: 99%;
 }
 
 #name {
+    text-transform: none;
     font-size: xxx-large;
-    text-transform: uppercase;
     margin: 0;
     padding: 0;
 }
@@ -98,6 +87,8 @@ h3 {
         overflow 1s ease-in-out,
         opacity 1s ease-in-out,
         width 1s ease-in-out,
+        max-width 1s ease-in-out,
+        max-height 1s ease-in-out,
         scale 1s ease-in-out;
 }
 
@@ -117,7 +108,7 @@ h3 {
 .video-container {
     width: auto;
     height: 100%;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -165,7 +156,10 @@ h3 {
     animation: blink-caret 0.5s step-end infinite;
 }
 .cv{
-    margin: 0 25%;
+    margin: 0;
+}
+.cv:hover{
+    background-color: #112764bb;
 }
 
 .title-text h1,
@@ -194,12 +188,13 @@ p {
     }
 
     .title {
-        width: 80%;
+        width: 90%;
     }
     .description{
         max-inline-size: 100%;
     }
     .cv-container{
+        width: 100%;
         align-items: center;
     }
 }

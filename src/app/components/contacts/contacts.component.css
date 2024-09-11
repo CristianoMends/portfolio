@@ -27,7 +27,7 @@ a {
 
 form {
     position: relative;
-    margin: 25px;
+    margin-bottom: 50px;
     transition: background-color 0.2s ease-in;
     background-color: var(--formColor);
     display: flex;
@@ -36,6 +36,7 @@ form {
     flex-direction: column;
     padding: 25px;
     width: 500px;
+    height: 400px;
     overflow: visible;
     border-radius: 5px;
     box-shadow: var(--boxShadow);

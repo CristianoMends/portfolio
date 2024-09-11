@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    padding-top: 100px;
+    padding: 100px 0;
     min-height: 100vh;
     background-color: var(--backgroundColor2);
 }
@@ -44,7 +44,7 @@
 .left {
     width: 40%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
 }
@@ -79,7 +79,10 @@
     overflow: hidden;
     padding: 35px 0;
     margin-bottom: 10px;
+}
 
+.indicators .dot:hover {
+    scale: 1.1;
 }
 
 .certificates h3 {
@@ -128,18 +131,56 @@
     margin: 1px;
     cursor: pointer;
 
-    &:active{
+    &:active {
         scale: 1.1;
-      }
-      
-      &.show{
+    }
+
+    &.show {
         background-color: var(--textColor);
-      }
-    
-      &:focus {
+    }
+
+    &:focus {
         outline: none;
-      }
+    }
 }
+
+.publications {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    width: 600px;
+    overflow: hidden;
+    padding: 35px 0;
+    margin-bottom: 10px;
+}
+
+.publications h3 {
+    width: 100%;
+    text-align: center;
+}
+
+.content-pub {
+    transition: transform 1s ease-out;
+}
+
+.previous-publication,
+.next-publication {
+    position: absolute;
+    top: 50%;
+    z-index: 40;
+    cursor: pointer;
+}
+
+.previous-publication {
+    left: 0;
+}
+
+.next-publication {
+    right: 0;
+}
+
 
 @media (max-width: 600px) {
     .top p {
@@ -163,6 +204,9 @@
     }
 
     .certificates {
+        width: 100%;
+    }
+    .publications {
         width: 100%;
     }
 }

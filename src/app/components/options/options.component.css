@@ -58,8 +58,9 @@
     left: 0;
 }
 
-.btn:hover {
+.btn div:hover {
     cursor: pointer;
+    background-color: #112764bb;
 }
 
 .btn:active {
@@ -76,6 +77,10 @@
 
 .btn-container:hover .name {
     visibility: visible;
+    transform: scale(1.1);
+}
+.btn-container:hover {
+    transform: scale(1.1);
 }
 
 i {
