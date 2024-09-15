@@ -66,6 +66,9 @@
     }
     100% {}
 }
+h3{
+    margin: 10px 0;
+}
 
 @media (max-width: 600px) {
     .marquee-content img {
