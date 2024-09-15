@@ -20,10 +20,7 @@
                     aprimorar e adquirir mais conhecimentos na área.
                 </p>
             </div>
-
-            <h3 class="about-name">O que faço?</h3>
             <div>
-
                 <p class="about-description">
                     Tenho experiência em criação de APIs Rest usando <strong>Java 17</strong> com <strong>Spring Boot
                         3</strong>, incluindo testes unitários com <strong>JUnit</strong> e <strong>Mockito</strong>,
@@ -43,7 +40,6 @@
                 </p>
             </div>
 
-            <h3>Hobbies e Interesses</h3>
             <div>
                 <p class="about-description">
                     Além de programação, tenho alguns hobbies que me ajudam a manter a criatividade e o equilíbrio.
@@ -52,7 +48,6 @@
                     praticar atividades ao ar livre.
                 </p>
             </div>
-            <h3>Disponibilidade</h3>
             <div>
                 <p class="about-description">
                     Estou aberto a novas oportunidades onde posso aplicar minhas habilidades e continuar aprendendo e
@@ -68,9 +63,9 @@
         </div>
         <div class="rigth">
             <app-skills></app-skills>
-
+            <!--
             <div class="publications" #publications>
-                <h3>Publicações</h3>
+                <h3>Artigos do Linkedin</h3>
                 <button class="previous-publication" [style]="currentPubIndex <= 0 ? 'display: none;':''" (click)="previousPublication()"><</button>
                 <div class="content-pub">
                     @for (item of publicationsLinks; track $index) {
@@ -81,7 +76,7 @@
                     }
                 </div>
                 <button class="next-publication" [style]="currentPubIndex >= publicationsLinks.length - 1 ? 'display: none;':''" (click)="nextPublication()">></button>
-            </div>
+            </div> -->
 
             <div class="certificates" #container>
                 <h3>Certificados</h3>

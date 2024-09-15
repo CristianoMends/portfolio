@@ -72,6 +72,7 @@ button:hover{
     height: 100%;
     width: -webkit-fill-available;
     transition: scale 0.2s ease-out;
+    filter: drop-shadow(5px 4px 3px #333);
 }
 .pc:hover{
     scale: 1.05;
@@ -92,6 +93,7 @@ button:hover{
     height: 200px;
     opacity: 1;
     transition: scale 0.2s ease-out;
+    filter: drop-shadow(5px 4px 3px #333);
 }
 .mobile:hover{
     scale: 1.1;
