@@ -24,7 +24,7 @@ img {
     height: auto;
     border-radius: 10px;
     box-shadow: var(--boxShadow);
-    transition: background-color 0.2s ease-in, box-shadow 0.2s ease;
+    transition: background-color 0.2s ease-in, box-shadow 0.2s ease, transform 0.2s ease-in;
     background-color: var(--formColor);
 }
 
