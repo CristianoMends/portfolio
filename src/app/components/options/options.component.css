@@ -69,10 +69,14 @@
 
 .name {
     visibility: hidden;
-    border-radius: 5px;
+    border-radius: 5px 50% 50% 5px;
+    width: 100px;
     height: max-content;
     margin: 0;
-    padding: 2px;
+    font-size: medium;
+    padding: 5px;
+    color: var(--formColor);
+    background: var(--textColor);
 }
 
 .btn-container:hover .name {
