@@ -55,7 +55,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: 20px;
+    padding: 5px;
     border-radius: 10px;
 }
 
@@ -65,7 +65,7 @@
 
 .left p {
     width: 100%;
-    margin-top: 0;
+    margin: 0;
     line-height: 1.6;
 }
 
