@@ -13,9 +13,9 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class PreviewComponent {
   constructor(private sanitizer: DomSanitizer) { }
-
+  
   private static visible: boolean = false;
-  private static url: string = 'https://www.youtube.com/embed/nN-u9vPlpdg?si=Ji8T1VeYcE09jx6d&amp&autoplay=1;controls=0';
+  private static url: string = '';
 
   toggleVisibility(url:string) {
     this.setVideoUrl(url);
@@ -25,7 +25,7 @@ export class PreviewComponent {
     return PreviewComponent.visible;
   }
   setVideoUrl(url: string) {
-    PreviewComponent.url = url;
+    PreviewComponent.url = url + '?si=Ji8T1VeYcE09jx6d&amp&autoplay=1;controls=0';
   }
 
   getVideoUrl(): SafeResourceUrl {

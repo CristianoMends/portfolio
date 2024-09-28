@@ -1,6 +1,6 @@
 <div *ngIf="isVisible()" class="preview" (click)="toggleVisibility('')">
-    <iframe
-        src='https://www.youtube.com/embed/nN-u9vPlpdg?si=Ji8T1VeYcE09jx6d&amp&autoplay=1;controls=0'
+    <iframe 
+        [src]="getVideoUrl()"
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
