@@ -6,6 +6,12 @@
     padding-top: 100px;
     background-color: var(--backgroundColor);
 }
+.a{
+    opacity: 1;
+}
+.b{
+    opacity: 0;
+}
 
 .contacts-container div {
     display: flex;
@@ -40,6 +46,7 @@ form {
     overflow: visible;
     border-radius: 5px;
     box-shadow: var(--boxShadow);
+    transition: opacity 1s ease, transform 1s ease;
 }
 
 .form-group {

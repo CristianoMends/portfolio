@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, NgModule, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, HostListener, NgModule, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { MessageComponent } from "../message/message.component";
@@ -74,5 +74,38 @@ export class ContactsComponent {
 
     }
   }
+
+  @ViewChild('section') element!: ElementRef;
+  private scrollPosition: number = 0;
+  private elementHeight: number = 0;
+  private pageHeight: number = 0;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.scrollPosition = window.scrollY;
+    this.elementHeight = this.element.nativeElement.offsetHeight;
+    const rect = this.element.nativeElement.getBoundingClientRect();
+    this.pageHeight = (rect.top + window.scrollY) - this.elementHeight;
+
+    if (this.isShowing()) {
+      this.addAnim();
+    } else {
+      this.remAnim();
+    }
+  }
+
+  private isShowing(): boolean {
+    return this.scrollPosition >= this.pageHeight;
+  }
+  private addAnim() {
+    this.element.nativeElement.style.opacity = 1;
+    this.element.nativeElement.style.transform = 'translateY(0)';
+  }
+  private remAnim() {
+    this.element.nativeElement.style.transform = 'translateY(20px)';
+    this.element.nativeElement.style.opacity = 0;
+  }
+  
+
 
 }

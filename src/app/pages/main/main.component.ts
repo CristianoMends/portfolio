@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { HeaderComponent } from "../../components/header/header.component";
 import { HomeComponent } from "../../components/home/home.component";
 import { OptionsComponent } from "../../components/options/options.component";
@@ -15,5 +15,6 @@ import { FooterComponent } from "../../components/footer/footer.component";
   styleUrl: './main.component.css'
 })
 export class MainComponent {
+
 
 }
