@@ -1,19 +1,12 @@
-<div class="project">
+<div class="project" #project>
     <div class="left">
         <img *ngIf="pcImagePath" class="pc" [src]="pcImagePath" alt="{{name}}" loading="lazy">
         <img *ngIf="mobileImagePath" class="mobile" [src]="mobileImagePath" alt="{{name}}" loading="lazy">
     </div>
-    <div class="rigth">
+    <div class="rigth" #rigth>
         <div class="header">
             <h3 class="project-title">
                 {{name}}
-            </h3>
-            <h3 [class]="urlProduction ? 'online':'offline'">
-                @if (urlProduction) {
-                    Disponivel ONLINE
-                }@else {
-                   Disponivel OFFLINE
-                }
             </h3>
         </div>
         <p class="project-description">

@@ -2,7 +2,9 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    transition: opacity 1s ease, transform 1s ease;
 }
+
 .description{
     width: 100%;
     display: flex;
@@ -73,6 +75,12 @@ button:hover{
     width: -webkit-fill-available;
     transition: scale 0.2s ease-out;
     filter: drop-shadow(5px 4px 3px #333);
+    animation: slowShake 5s ease-in-out infinite;
+}
+@keyframes slowShake {
+    0%{}
+    50%{transform: translateY(5px);}
+    100%{}
 }
 .pc:hover{
     scale: 1.05;
@@ -94,6 +102,12 @@ button:hover{
     opacity: 1;
     transition: scale 0.2s ease-out;
     filter: drop-shadow(5px 4px 3px #333);
+    animation: slowShake2 5s ease-in-out infinite 0.5s;
+}
+@keyframes slowShake2 {
+    0%{ }
+    50%{transform: translateX(-50px) translateY(10px);}
+    100%{ }
 }
 .mobile:hover{
     scale: 1.1;
