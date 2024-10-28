@@ -6,6 +6,7 @@
     width: max-content;
     margin: 25px;
     z-index: 99;
+    opacity: 0.8;
 }
 
 .content {
@@ -49,6 +50,10 @@
     background-color: #1b3fa3bb;
     position: absolute;
 }
+.btn div span{
+    color: var(--textColor);
+    opacity: 0.9;
+}
 
 .start {
     right: 0;
@@ -64,7 +69,7 @@
 }
 
 .btn:active {
-    scale: 1.1;
+    scale: 1.05;
 }
 
 .name {
@@ -81,10 +86,10 @@
 
 .btn-container:hover .name {
     visibility: visible;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 .btn-container:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 i {
@@ -110,9 +115,5 @@ i {
     }
     .btn-container:hover .name {
         visibility: hidden;
-    }
-    .material-symbols-outlined{
-        height: 5px;
-        width: 5px;
     }
 }
