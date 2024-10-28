@@ -15,6 +15,12 @@
     width: 25%;
     text-align: center;
 }
+button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
 button:hover{
     background-color: #112764bb;
 }
