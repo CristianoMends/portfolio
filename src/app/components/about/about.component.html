@@ -1,6 +1,6 @@
 <section id="about" class="about-container">
     <div class="top">
-        <h2 class="about-name">Sobre mim</h2>
+        <h2 class="about-name">Sobre</h2>
         <p class="description">Aqui você encontrará mais informações sobre mim, o que faço e minhas habilidades
             atuais
             principalmente em termos de programação e tecnologia</p>
@@ -71,16 +71,25 @@
 
             <div class="certificates" #container>
                 <h3>Certificados</h3>
-                <button class="previous-certificate" [style]="currentIndex <= 0 ? 'display: none;':''" (click)="previousCertificate()"><</button>
-                    <div class="content" #content>
-                        @for (item of certificates; track $index) {
-                            <app-certificates [image]="item.image" [link]="item.link"></app-certificates>
-                        }
-                    </div>
-                    <div class="indicators">
-                            <div *ngFor="let item of certificates; let i=index" [class]="currentIndex === i ? 'dot show':'dot'" id={{i}} (click)="selectCertificate(i)"></div>                        
-                    </div>
-                <button class="next-certificate" [style]="currentIndex >= certificates.length -1 ? 'display: none;':''" (click)="nextCertificate()">></button>
+                <button class="previous-certificate" [style]="currentIndex <= 0 ? 'display: none;':''"
+                    (click)="previousCertificate()">
+                    <span class="material-symbols-outlined">arrow_left</span>
+                </button>
+                <div class="content" #content>
+                    @for (item of certificates; track $index) {
+                    <app-certificates [image]="item.image" [link]="item.link"></app-certificates>
+                    }
+                </div>
+                <div class="indicators">
+                    <div *ngFor="let item of certificates; let i=index" [class]="currentIndex === i ? 'dot show':'dot'"
+                        id={{i}} (click)="selectCertificate(i)"></div>
+                </div>
+                <button class="next-certificate" [style]="currentIndex >= certificates.length -1 ? 'display: none;':''"
+                    (click)="nextCertificate()">
+                    <span class="material-symbols-outlined">
+                        arrow_right
+                    </span>
+                </button>
             </div>
         </div>
     </div>

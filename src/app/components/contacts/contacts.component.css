@@ -30,6 +30,12 @@ a {
     border: 1px solid transparent;
     border-radius: 5px;
 }
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
 
 form {
     position: relative;
@@ -103,7 +109,7 @@ textarea {
 }
 .error-message {
     display: flex;
-    color: red;
+    color: rgb(182, 11, 11);
     font-size: 0.9em;
     margin-top: 0.25em;
     justify-content: start;

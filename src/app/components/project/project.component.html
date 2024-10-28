@@ -18,12 +18,21 @@
         </div>
         <div class="down">
             <button *ngIf="urlVideo" (click)="showPreview(urlVideo)">
+                <span class="material-symbols-outlined">
+                    play_circle
+                </span>
                 VÍDEO
             </button>
             <button *ngIf="urlProduction" (click)="goLink(urlProduction)">
+                <span class="material-symbols-outlined">
+                    web
+                </span>
                 ACESSAR
             </button>
             <button *ngIf="urlRepository" (click)="goLink(urlRepository)">
+                <span class="material-symbols-outlined">
+                    code
+                </span>
                 CÓDIGO FONTE
             </button>
         </div>

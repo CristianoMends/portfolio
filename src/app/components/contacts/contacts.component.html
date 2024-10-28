@@ -1,6 +1,6 @@
 <section id="contacts" class="contacts-container" >
 
-    <h2>Contate-me</h2>
+    <h2>Contatos</h2>
 
     <div class="description">
         <p>Sinta-se à vontade para entrar em contato comigo enviando o formulário abaixo. Responderei o mais breve
@@ -35,6 +35,9 @@
             (click)="onBtnClick(form)"
                 [style.background-color]="(form.invalid || (messageField.value && messageField.touched && messageField.value.length < 20)) ? 'red' : ''"
                 >
+                <span class="material-symbols-outlined">
+                    send
+                </span>
                 ENVIAR
             </button>
         </div>

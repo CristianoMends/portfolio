@@ -58,9 +58,9 @@
     left: 0;
 }
 
-.btn div:hover {
+.btn:hover {
     cursor: pointer;
-    background-color: #112764bb;
+    opacity: 0.8;
 }
 
 .btn:active {
