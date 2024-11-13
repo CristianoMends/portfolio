@@ -163,6 +163,9 @@ h3 {
     justify-content: center;
     gap: 5px;
 }
+img{
+    height: 25px;
+}
 .cv:hover{
     background-color: #112764bb;
 }

@@ -35,9 +35,7 @@
             (click)="onBtnClick(form)"
                 [style.background-color]="(form.invalid || (messageField.value && messageField.touched && messageField.value.length < 20)) ? 'red' : ''"
                 >
-                <span class="material-symbols-outlined">
-                    send
-                </span>
+                <img class="icon" src="../../../assets/send_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="Enviar">
                 ENVIAR
             </button>
         </div>
