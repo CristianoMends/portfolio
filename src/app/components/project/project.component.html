@@ -18,21 +18,15 @@
         </div>
         <div class="down">
             <button *ngIf="urlVideo" (click)="showPreview(urlVideo)">
-                <span class="material-symbols-outlined">
-                    play_circle
-                </span>
+                <img class="icon" src="../../../assets/play_circle_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="play video">
                 VÍDEO
             </button>
             <button *ngIf="urlProduction" (click)="goLink(urlProduction)">
-                <span class="material-symbols-outlined">
-                    web
-                </span>
+                <img class="icon" src="../../../assets/web_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="Acessar">
                 ACESSAR
             </button>
             <button *ngIf="urlRepository" (click)="goLink(urlRepository)">
-                <span class="material-symbols-outlined">
-                    code
-                </span>
+                <img class="icon" src="../../../assets/code_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="Código fonte">
                 CÓDIGO FONTE
             </button>
         </div>

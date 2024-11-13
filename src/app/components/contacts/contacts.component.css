@@ -12,6 +12,9 @@
 .b{
     opacity: 0;
 }
+.icon{
+    height: 25px;
+}
 
 .contacts-container div {
     display: flex;
