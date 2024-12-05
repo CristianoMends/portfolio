@@ -1,5 +1,5 @@
 <div class="project" #project>
-    <div class="left">
+    <div class="left" *ngIf="pcImagePath.length > 0 || mobileImagePath.length > 0">
         <img *ngIf="pcImagePath" class="pc" [src]="pcImagePath" alt="{{name}}" loading="lazy">
         <img *ngIf="mobileImagePath" class="mobile" [src]="mobileImagePath" alt="{{name}}" loading="lazy">
     </div>
@@ -12,7 +12,7 @@
         <p class="project-description">
             {{description}}
         </p>
-        <h3>Tecnologias</h3>
+        <h3 *ngIf="technologies.length > 0">Tecnologias</h3>
         <div class="technologies">
             <div *ngFor="let t of technologies"><span>{{t}}</span></div>
         </div>
