@@ -124,7 +124,7 @@ button {
 
 @media (max-width: 600px) {
     .repository-card {
-        width: 80%;
+        width: 90%;
         margin-left: 10px;
         height: auto;
         padding: 15px;
