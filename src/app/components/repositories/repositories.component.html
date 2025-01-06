@@ -1,13 +1,13 @@
 <app-loading *ngIf="loadingService.loading$ | async"></app-loading>
 
-<section class="repository-container section" id="repos">
+<section class="repository-container section" id="repos" #repositoryContainer>
     <h2>Repositórios do Github</h2>
     <div class="description">
         <p>Aqui você encontrará detalhes dos últimos projetos no GitHub</p>
     </div>
 
     <div class="repositories">
-        <div class="repos" [ngClass]="{'anim': isShowing()}" #repositoryContainer>
+        <div class="repos" [ngClass]="{'anim': isShowing()}">
             @for (repo of repos; track $index) {
             <app-repository-card [repo]="repo"></app-repository-card>
             }

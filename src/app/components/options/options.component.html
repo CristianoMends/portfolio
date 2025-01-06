@@ -5,13 +5,9 @@
             <div class="btn" (click)="switchTheme()">
                 <div [class]="!isDarkTheme ? 'icon start' : 'icon end'">
                     @if (isDarkTheme) {
-                    <span class="material-symbols-outlined">
-                        dark_mode
-                    </span>
+                    <img src="../../../assets/dark_mode.svg" alt="darkmode">
                     }@else{
-                    <span class="material-symbols-outlined">
-                        light_mode
-                    </span>
+                    <img src="../../../assets/light_mode.svg" alt="ligthmode">
                     }
                 </div>
             </div>

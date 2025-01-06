@@ -3,7 +3,6 @@
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    padding: 100px 0;
     color: #333;
     background-color: var(--backgroundColor2);
     position: relative;

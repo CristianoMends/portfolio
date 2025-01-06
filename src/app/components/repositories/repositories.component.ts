@@ -1,10 +1,10 @@
-import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
 import { GithubService } from '../../service/github.service';
 import Repository from '../../interface/repo';
 import { RepositoryCardComponent } from "../repository-card/repository-card.component";
 import { LoadingService } from '../../service/loading.service';
 import { LoadingComponent } from "../loading/loading.component";
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-repositories',
@@ -33,7 +33,11 @@ export class RepositoriesComponent implements AfterViewInit {
   pages: number[] = Array.from({ length: Math.ceil(this.limit / this.perPage) }, (_, index) => index + 1);
 
 
-  constructor(private githubService: GithubService, public loadingService: LoadingService,) { }
+  constructor(
+    private githubService: GithubService,
+    public loadingService: LoadingService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) { }
 
   setFilter(sortBy: string, direction: string): void {
     this.sortBy = sortBy;
@@ -72,14 +76,27 @@ export class RepositoriesComponent implements AfterViewInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
     this.scrollPosition = window.scrollY;
-    const elementHeight = this.element.nativeElement.offsetHeight;
     const rect = this.element.nativeElement.getBoundingClientRect();
-    this.sectionTop = (rect.top + window.scrollY) - elementHeight;
-    this.sectionBottom = (this.sectionTop) + elementHeight;
+
+    this.sectionTop = rect.top + window.scrollY;
+    this.sectionBottom = this.sectionTop + rect.height;
   }
 
   isShowing(): boolean {
-    return this.scrollPosition >= this.sectionTop - 150 && this.scrollPosition <= this.sectionBottom + 100;
+    if (!isPlatformBrowser(this.platformId)) {
+      return true;
+    }
+    const viewportTop = window.scrollY;
+    const viewportBottom = viewportTop + window.innerHeight;
+
+    return (
+      this.sectionBottom >= viewportTop &&
+      this.sectionTop <= viewportBottom
+    );
   }
 }

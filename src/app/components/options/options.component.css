@@ -8,6 +8,12 @@
     z-index: 99;
     opacity: 0.8;
 }
+.container *{
+    -webkit-user-select: none;
+    -moz-user-select: none;    
+    -ms-user-select: none;    
+    user-select: none; 
+}
 
 .content {
     gap: 5px;
