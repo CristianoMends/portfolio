@@ -22,7 +22,7 @@
                 <h3>Certificados</h3>
                 <button class="previous-certificate" [style]="currentIndex <= 0 ? 'display: none;':''"
                     (click)="previousCertificate()">
-                    <span class="material-symbols-outlined">arrow_left</span>
+                    <img src="../../../assets/chevron_left.svg" alt="left icon">
                 </button>
                 <div class="content" #content>
                     @for (item of certificates; track $index) {
@@ -36,14 +36,10 @@
                 </div>
                 <button class="next-certificate" [style]="currentIndex >= certificates.length -1 ? 'display: none;':''"
                     (click)="nextCertificate()">
-                    <span class="material-symbols-outlined">
-                        arrow_right
-                    </span>
+                    <img src="../../../assets/chevron_right.svg" alt="right icon">
                 </button>
             </div>
         </div>
     </div>
     <app-skills></app-skills>
 </section>
-
-  

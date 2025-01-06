@@ -13,7 +13,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-top: 50px;
 
-    transition: scale 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, scale 0.2s ease-in-out;
 }
 
 .div1 {
@@ -133,36 +133,5 @@ button {
 
     .repository-card h3 {
         font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 900px) {
-    .repository-card {
-        width: 90%;
-        height: 250px;
-        margin: 20px auto;
-        padding: 15px;
-    }
-
-    .repository-card h3 {
-        font-size: 1.4rem;
-    }
-}
-
-@media (max-width: 1200px) {
-    .repository-card {
-        width: 400px;
-        height: 280px;
-    }
-
-    .repository-card h3 {
-        font-size: 1.6rem;
-    }
-}
-
-@media (min-width: 1201px) {
-    .repository-card {
-        width: 450px;
-        height: 300px;
     }
 }

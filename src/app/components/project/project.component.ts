@@ -1,6 +1,6 @@
-import { Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Inject, Input, Output, PLATFORM_ID, ViewChild } from '@angular/core';
 import { PreviewComponent } from '../preview/preview.component';
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { isPlatformBrowser, NgClass, NgFor, NgIf } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
@@ -28,6 +28,8 @@ export class ProjectComponent {
 
   constructor(
     private sanitizer: DomSanitizer,
+    @Inject(PLATFORM_ID) private platformId: Object
+
   ) {
 
   }
@@ -40,15 +42,28 @@ export class ProjectComponent {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
     this.scrollPosition = window.scrollY;
-    const elementHeight = this.element.nativeElement.offsetHeight;
     const rect = this.element.nativeElement.getBoundingClientRect();
-    this.sectionTop = (rect.top + window.scrollY) - elementHeight;
-    this.sectionBottom = (this.sectionTop) + elementHeight;
+
+    this.sectionTop = rect.top + window.scrollY;
+    this.sectionBottom = this.sectionTop + rect.height;
   }
 
   isShowing(): boolean {
-    return this.scrollPosition >= this.sectionTop - 100 && this.scrollPosition <= this.sectionBottom + 100;
+    if (!isPlatformBrowser(this.platformId)) {
+      return true;
+    }
+    const viewportTop = window.scrollY;
+    const viewportBottom = viewportTop + window.innerHeight;
+
+    return (
+      this.sectionBottom >= viewportTop &&
+      this.sectionTop <= viewportBottom
+    );
   }
 
   getSafeVideoUrl(): SafeResourceUrl {

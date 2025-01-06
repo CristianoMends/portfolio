@@ -46,26 +46,48 @@ html {
     background: #1b3fa3bb;
     border-radius: 10px;
 }
-.section{
+
+.section {
     border-top: 1px solid #0000003e;
 }
-button {
-    border: 1px solid transparent;
-    color: #fff;
-    background-color: #1b3fa3bb;
-    text-decoration: none;
-    border-radius: 5px;
-    box-shadow: var(--boxShadow);
-    font-size: medium;
-    padding: 10px;
 
+button {
+    border: 1px solid var(--detailColor);
+    color: var(--textColorReverse);
+    background: linear-gradient(#1b3fa3bb, #5976c5bb);
+    border-radius: 10px;
+    box-shadow:
+        4px 4px 8px var(--shadowColor),
+        -4px -4px 8px rgba(255, 255, 255, 0.1),
+        inset 2px 2px 4px rgba(0, 0, 0, 0.2),
+        inset -2px -2px 4px rgba(255, 255, 255, 0.1);
+    font-size: medium;
+    padding: 12px 20px;
     font-family: "Acme", sans-serif;
     font-weight: 400;
     font-style: normal;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    color: #fff;
+    box-shadow: var(--boxShadow);
+    text-shadow: 2px 2px 3px black;
 }
 
-a,
+button * {
+    filter: drop-shadow(2px 2px 3px black);
+}
+
+
 button:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        6px 6px 12px var(--shadowColor),
+        -6px -6px 12px rgba(255, 255, 255, 0.1),
+        inset 3px 3px 6px rgba(0, 0, 0, 0.3),
+        inset -3px -3px 6px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+a {
     cursor: pointer;
     scale: 1.1;
 }
@@ -102,5 +124,24 @@ h4 {
 
     h3 {
         font-size: 1.3rem;
+    }
+
+    @media (max-width: 600px) {
+        *::-webkit-scrollbar {
+            width: 2px;
+
+        }
+
+        *::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background: #1b3fa3bb;
+            border-radius: 10px;
+        }
+        button{
+            padding: 6px 10px;
+        }
     }
 }
