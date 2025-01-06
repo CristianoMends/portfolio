@@ -1,0 +1,21 @@
+<app-loading *ngIf="loadingService.loading$ | async"></app-loading>
+
+<section class="repository-container section" id="repos">
+    <h2>Repositórios do Github</h2>
+    <div class="description">
+        <p>Aqui você encontrará detalhes dos últimos projetos no GitHub</p>
+    </div>
+
+    <div class="repositories">
+        <div class="repos" [ngClass]="{'anim': isShowing()}" #repositoryContainer>
+            @for (repo of repos; track $index) {
+            <app-repository-card [repo]="repo"></app-repository-card>
+            }
+        </div>
+        <div class="indicators">
+            <div *ngFor="let i of pages; let idx = index" [class]="page === i ? 'dot show' : 'dot'" id="{{i}}"
+                (click)="selectPage(i)">
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,31 +1,28 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "./components/header/header.component";
-import { HomeComponent } from "./components/home/home.component";
-import { AboutComponent } from "./components/about/about.component";
-import { ContactsComponent } from "./components/contacts/contacts.component";
-import { FooterComponent } from "./components/footer/footer.component";
-import { ProjectsComponent } from "./components/projects/projects.component";
-import { OptionsComponent } from "./components/options/options.component";
+import { AfterViewInit, Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { MainComponent } from "./pages/main/main.component";
+import { AnalyticsService } from './service/analytics.service';
+import { isPlatformBrowser } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
-    selector: 'app-root',
-    standalone: true,
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.css',
-    imports: [HttpClientModule, RouterOutlet, HeaderComponent, HomeComponent, AboutComponent, ContactsComponent, FooterComponent, ProjectsComponent, OptionsComponent, MainComponent]
+  selector: 'app-root',
+  standalone: true,
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
+  providers: [AnalyticsService],
+  imports: [HttpClientModule, RouterOutlet, FormsModule, ]
 })
-export class AppComponent {
-  title = 'portifolio';
-  constructor(private route: ActivatedRoute) { }
+export class AppComponent implements AfterViewInit {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private analyticsService: AnalyticsService) { }
 
-  ngOnInit() {
-    this.route.fragment.subscribe(fragment => {
-      if (fragment) {
-        document.getElementById(fragment)?.scrollIntoView({ behavior: 'instant' });
-      }
-    });
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.analyticsService.saveAccess().subscribe({
+        next: () => {
+        }
+      })
+    }
   }
 }

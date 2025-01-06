@@ -9,7 +9,7 @@ h2{
 .projects{
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    padding: 25px 0 150px 0;
 }
 .description{
     width: 100%;

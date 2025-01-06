@@ -13,8 +13,6 @@ export class HomeComponent implements AfterViewInit {
 
   @ViewChild('hello') hello!: ElementRef;
   @ViewChild('name') name!: ElementRef;
-  //@ViewChild('video') video!: ElementRef;
-  @ViewChild('cv') cv!: ElementRef;
   @ViewChild('contact') contact!: ElementRef;
 
   async ngAfterViewInit() {
@@ -37,8 +35,6 @@ export class HomeComponent implements AfterViewInit {
       await this.sleep(100);
 
       if (i == textElements.length - 1) {
-        //this.video.nativeElement.className = 'video-container visible';
-        this.cv.nativeElement.className = 'cv';
         this.contact.nativeElement.className = 'cv-container visible'
       }
     }
@@ -54,9 +50,5 @@ export class HomeComponent implements AfterViewInit {
         document.getElementById(fragment)?.scrollIntoView({ behavior: 'smooth' });
       }
     });
-  }
-  downloadCv() {
-    const url = 'https://drive.google.com/uc?export=download&id=1SDkdn3DQzV59uznpX-oejhaLJlEQQRIt';
-    window.open(url, '_blank');
   }
 }
