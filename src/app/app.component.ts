@@ -4,7 +4,6 @@ import { MainComponent } from "./pages/main/main.component";
 import { AnalyticsService } from './service/analytics.service';
 import { isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +11,7 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [AnalyticsService],
-  imports: [HttpClientModule, RouterOutlet, FormsModule, ]
+  imports: [HttpClientModule, FormsModule, MainComponent]
 })
 export class AppComponent implements AfterViewInit {
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private analyticsService: AnalyticsService) { }
