@@ -1,9 +1,10 @@
 .footer-container {
     color: #fff;
-    padding: 20px 0;
+    padding: 40px 0;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 100px 0;
+    background-color: #222;
+    padding-top: 50px;
 }
 
 .footer-container a {
@@ -15,18 +16,68 @@
 .footer-container a:hover {
     text-decoration: underline;
 }
+.social-icons a img {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+}
+.social-icons a:hover img {
+    opacity: 0.7;
+}
+
 
 .footer-container .container,
 .footer-container .page-container,
 .footer-container .contact-container,
 .footer-container .nav-container,
 .footer-container .dev-container {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-.footer-container,
-.footer-container {
-    margin: 5px 0;
+.footer-container .social-icons a {
+    margin: 0 10px;
+}
+
+.footer-container .nav-container ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.footer-container .nav-container ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.dev-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.dev-container p {
+    padding: 15px;
+    text-align: center;
+    width: 80%;
+}
+
+.visits {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.visits label {
+    font-weight: bold;
+    color: #dfdcdc; /* Cor mais suave para o label */
+}
+
+.qtd-access {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f39c12; /* Cor destacada para o número de visitas */
 }
 
 .contact-container p {
@@ -35,26 +86,11 @@
 }
 
 .footer-container .social-icons a {
-    margin: 0 5px;
+    color: #dfdcdc;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.footer-container .nav-container ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-container .nav-container ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-.dev-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.dev-container p {
-    margin: 0;
+.footer-container .social-icons a:hover {
+    text-decoration: underline;
 }

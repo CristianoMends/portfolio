@@ -1,9 +1,9 @@
 <div class="project" #project>
-    <div class="left" *ngIf="pcImagePath.length > 0 || mobileImagePath.length > 0">
-        <img *ngIf="pcImagePath" class="pc" [src]="pcImagePath" alt="{{name}}" loading="lazy">
-        <img *ngIf="mobileImagePath" class="mobile" [src]="mobileImagePath" alt="{{name}}" loading="lazy">
+    <div class="left" [ngClass]="isShowing() ? 'anim-on':''">
+        <img class="project-background" src="../../../assets/project_background.png" alt="background">
+        <img *ngIf="image" class="pc" [src]="image" alt="{{name}}" loading="lazy">
     </div>
-    <div class="rigth" #rigth>
+    <div class="rigth" #RigthContainer #rigthContainer [ngClass]="isShowing() ? 'anim-on':''">
         <div class="header">
             <h3 class="project-title">
                 {{name}}
@@ -17,7 +17,7 @@
             <div *ngFor="let t of technologies"><span>{{t}}</span></div>
         </div>
         <div class="down">
-            <button *ngIf="urlVideo" (click)="showPreview(urlVideo)">
+            <button class="hover-animate" *ngIf="urlVideo" (click)="sendUrl()">
                 <img class="icon" src="../../../assets/play_circle_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="play video">
                 VÍDEO
             </button>

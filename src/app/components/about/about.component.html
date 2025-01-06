@@ -1,67 +1,23 @@
-<section id="about" class="about-container">
+<section id="about" class="about-container section">
     <div class="top">
         <h2 class="about-name">Sobre</h2>
         <p class="description">Aqui você encontrará mais informações sobre mim, o que faço e minhas habilidades
             atuais
             principalmente em termos de programação e tecnologia</p>
     </div>
-    <div class="down">
-        <div class="left" #left>
+    <div class="down" #down>
+        <div class="left" [ngClass]="isElementVisible() ? 'anim-on':''">
             <h3 class="about-name">Quem sou?</h3>
-            <div>
-                <p class="about-description">
-                    Desde criança, sempre gostei de tecnologia, e em 2022, ao fazer o curso de <strong>Programador de
-                        Sistemas</strong> no
-                    <strong>SENAC</strong>, percebi que podia seguir nessa área como carreira. No curso, aprendi a
-                    <strong>lógica de programação</strong>, além de bases de <strong>Java</strong> e
-                    <strong>SQL</strong>.
-                    Hoje, sou estudante de <strong>Engenharia
-                        de Software</strong> na <strong>Universidade Federal do Ceará</strong>, e estou sempre buscando
-                    aprender e melhorar minhas habilidades.
-                </p>
-            </div>
-            <div>
-                <p class="about-description">
-                    Minhas principais tecnologias incluem <strong>Java</strong> e <strong>Spring Boot</strong>, onde
-                    tenho experiência na criação de <strong>APIs Rest</strong>, realizando testes para garantir que tudo
-                    funcione bem e utilizando
-                    ferramentas para documentação e segurança dos sistemas. Também trabalho com bancos de dados
-                    relacionais <strong>Postgres</strong>,
-                    realizando operações de consulta, inclusão e atualização de informações. Além dessas, já desenvolvi
-                    em outras tecnologias conforme as necessidades dos projetos. </p>
-                <p class="about-description">
-                    Além de desenvolvimento Backend, tenho experiência em desenvolvimento frontend usando
-                    <strong>Angular</strong> e <strong>React</strong>, focando na criação de interfaces responsivas
-                    e
-                    interativas. Além disso, possuo habilidades em consumir APIs para integrar dados e
-                    funcionalidades
-                    nos aplicativos que desenvolvo.
-                </p>
-            </div>
-            <div>
-                <p class="about-description">
-                    Estou aberto a novas oportunidades onde posso aplicar minhas habilidades e continuar aprendendo. Se
-                    você tiver uma oportunidade que combine com o meu perfil, ficarei feliz em conversar!
-                </p>
-            </div>
-        </div>
-        <div class="rigth" #rigth>
-            <app-skills></app-skills>
-            <!--
-            <div class="publications" #publications>
-                <h3>Artigos do Linkedin</h3>
-                <button class="previous-publication" [style]="currentPubIndex <= 0 ? 'display: none;':''" (click)="previousPublication()"><</button>
-                <div class="content-pub">
-                    @for (item of publicationsLinks; track $index) {
-                        <app-publications
-                            [style]="$index === currentPubIndex ? 'display: block;' : 'display: none;'"
-                            [link]="item.link">
-                        </app-publications>
-                    }
-                </div>
-                <button class="next-publication" [style]="currentPubIndex >= publicationsLinks.length - 1 ? 'display: none;':''" (click)="nextPublication()">></button>
-            </div> -->
 
+            @for (item of paragraphs; track $index) {
+            <div>
+                <p class="about-description">
+                    {{item.description}}
+                </p>
+            </div>
+            }
+        </div>
+        <div class="rigth" [ngClass]="isElementVisible() ? 'anim-on':''">
             <div class="certificates" #container>
                 <h3>Certificados</h3>
                 <button class="previous-certificate" [style]="currentIndex <= 0 ? 'display: none;':''"
@@ -70,7 +26,8 @@
                 </button>
                 <div class="content" #content>
                     @for (item of certificates; track $index) {
-                    <app-certificates [image]="item.image" [link]="item.link"></app-certificates>
+                    <app-certificates [image]="item.image" [link]="item.link">
+                    </app-certificates>
                     }
                 </div>
                 <div class="indicators">
@@ -86,4 +43,7 @@
             </div>
         </div>
     </div>
+    <app-skills></app-skills>
 </section>
+
+  

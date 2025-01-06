@@ -1,0 +1,168 @@
+.repository-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff23;
+    border: 1px solid #e0e0e0;
+    width: 450px;
+    height: 300px;
+    padding: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+
+    transition: scale 0.2s ease-in-out;
+}
+
+.div1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 5px;
+}
+
+.icon {
+    height: 25px;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.details p {
+    font-size: 0.9em;
+}
+
+.details .commits {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div1 p {
+    text-align: center;
+    min-width: 25%;
+}
+
+.description {
+    width: 100%;
+    min-height: 10%;
+    overflow: auto;
+    padding: 3px;
+}
+
+.languages {
+    width: 100%;
+    display: flex;
+    gap: 3px;
+}
+
+.languages p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--boxColor);
+    border: 1px solid #e0e0e0;
+    opacity: 0.8;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stars p {
+    padding-top: 3px;
+}
+
+.details .pushs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.repository-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 3px 3px #6868688e;
+}
+
+.repository-card h3 {
+    font-size: 1.5rem;
+    color: var(--textColor);
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.repository-card p {
+    margin: 5px 0;
+    color: var(--textColor);
+    text-align: start;
+}
+
+.forked a {
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .repository-card {
+        width: 80%;
+        margin-left: 10px;
+        height: auto;
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .repository-card h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .repository-card {
+        width: 90%;
+        height: 250px;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .repository-card h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .repository-card {
+        width: 400px;
+        height: 280px;
+    }
+
+    .repository-card h3 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (min-width: 1201px) {
+    .repository-card {
+        width: 450px;
+        height: 300px;
+    }
+}

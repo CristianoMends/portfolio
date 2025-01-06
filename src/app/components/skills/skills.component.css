@@ -1,10 +1,18 @@
 .skills-container {
     width: auto;
-    max-width: 600px;
+    max-width: 100vw;
     display: flex;
     align-items: center;
     flex-direction: column;
-    opacity: 1;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 0s forwards;
+}
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }100%{
+        opacity: 1;
+    }
 }
 
 
@@ -48,24 +56,7 @@
     }
 }
 
-.animation {
-    animation: domino 2s linear;
-}
 
-@keyframes domino {
-    0% {}
-    25%{
-
-    }
-    50% {
-        border-color: var(--backgroundColor2);
-        transform: translateX(10px) translateY(20px);
-    }
-    75%{
-
-    }
-    100% {}
-}
 h3{
     margin: 10px 0;
 }

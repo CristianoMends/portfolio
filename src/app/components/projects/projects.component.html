@@ -1,4 +1,6 @@
-<app-preview></app-preview>
+<app-preview *ngIf="isComponentePreviewVisible" (click)="isComponentePreviewVisible = false" [url]="url"></app-preview>
+<app-loading *ngIf="loadingService.loading$ | async"></app-loading>
+
 <section id="projects" class="projects-container section">
     <h2>Projetos em destaque</h2>
     <div class="description">
@@ -7,7 +9,21 @@
     </div>
     <div class="projects">
 
-        <app-project
+        @for (p of projects; track $index) {
+        <app-project 
+            [name]="p.name"
+            [description]="p.description"
+            [technologies]="p.technologies.split(',')"
+            [image]="p.image" 
+            [urlRepository]="p.repositoryUrl"
+            [urlProduction]="p.url" 
+            [urlVideo]="p.youtubeUrl"
+            (url)="showPreview($event)"
+            >
+        </app-project>
+        }
+
+        <!--<app-project
             [name]="'The Catalog'"
             [description]="'The Catalog é um Catálogo de produtos que oferece uma maneira intuitiva e eficiente de explorar uma variedade de produtos de várias lojas registradas. Com uma interface amigável e funcionalidade de busca e contato com vendedor, os usuários podem navegar facilmente pelo catálogo, encontrando informações detalhadas sobre cada item.'"
             [technologies]="['Nest.Js', 'Angular 17', 'PostgreSQL', 'Vercel']"
@@ -34,6 +50,6 @@
             [urlRepository]="'https://github.com/CristianoMends/FreeLoot-API'"
             [urlVideo]="'https://www.youtube.com/embed/soo2DI9DxrY?t=6'">
             >
-        </app-project>    
+        </app-project> -->
     </div>
 </section>

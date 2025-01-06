@@ -46,7 +46,9 @@ html {
     background: #1b3fa3bb;
     border-radius: 10px;
 }
-
+.section{
+    border-top: 1px solid #0000003e;
+}
 button {
     border: 1px solid transparent;
     color: #fff;

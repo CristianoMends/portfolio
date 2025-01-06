@@ -1,0 +1,35 @@
+<div class="repository-card" #repositoryCard>
+    <h3>{{repo.name.toUpperCase()}}</h3>
+    <p class="description">{{ repo.description }}</p>
+
+    @if (repo.fork) {
+    <div class="forked">
+        <p>Fork de:
+            <a [href]="repo.originalOwner.html_url" target="_blank">{{
+                repo.originalOwner.login }}</a>
+        </p>
+    </div>
+    }
+    <div class="languages">
+        @for (l of repo.languages; track $index) {
+        <p>{{l}}</p>
+        }
+    </div>
+    <div class="details">
+        <div class="stars">
+            <img src="../../../assets/star_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="star" height="20px">
+            <p>{{repo.stars_count}}</p>
+        </div>
+        <div class="commits">
+            <img src="../../../assets/history_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="commits" height="20px">
+            <p>{{repo.commits_on_main}} Commits</p>
+        </div>
+        <div class="pushs">
+            <p> Último Push {{calculateDays(repo.pushed_at)}}</p>
+        </div>
+    </div>
+    <button (click)="goLink(repo.html_url)">
+        <img class="icon" src="../../../assets/code_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="Código fonte">
+        Mais Detalhes
+    </button>
+</div>

@@ -1,60 +1,57 @@
 import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { SkillsComponent } from "../skills/skills.component";
 import { CertificatesComponent } from '../certificates/certificates.component';
-import { NgFor, NgForOf } from '@angular/common';
-import { PublicationsComponent } from "../publications/publications.component";
-import { link } from 'fs';
+import { NgClass, NgFor, NgForOf } from '@angular/common';
+import { CertificationService } from '../../service/certification.service';
+import Certificate from '../../interface/certificate';
+import { AboutService } from '../../service/about.service';
+import About from '../../interface/about';
 
 @Component({
     selector: 'app-about',
     standalone: true,
     templateUrl: './about.component.html',
     styleUrl: './about.component.css',
-    imports: [SkillsComponent, CertificatesComponent, NgFor, PublicationsComponent, NgForOf]
+    providers: [CertificationService, AboutService],
+    imports: [SkillsComponent, CertificatesComponent, NgFor, NgForOf, NgClass]
 })
 export class AboutComponent implements AfterViewInit {
 
-    @ViewChild('content') content!: ElementRef;
-    @ViewChild('container') container!: ElementRef;
+    private containerWidth!: number;
+    private contentWidth!: number
 
-    containerWidth!: number;
-    contentWidth!: number
+    certificates: Certificate[] = [];
+    paragraphs: About[] = [];
+    currentIndex = 0;
+    
+    private scrollPosition: number = 0;
+    private sectionTop: number = 0;
+    private sectionBottom: number = 0;
+    
+    @ViewChild('down') element!: ElementRef;
+    @ViewChild('content') private content!: ElementRef;
+    @ViewChild('container') private container!: ElementRef;
+
+    constructor(private certificateService: CertificationService, private aboutService: AboutService) { }
+
 
     ngAfterViewInit() {
+        this.certificateService.getCertificates().subscribe({
+            next: (res) => {
+                this.certificates = res;
+            }
+        })
+        this.aboutService.getAbout().subscribe({
+            next: (res) => {
+                this.paragraphs = res;
+            }
+        })
+
         this.containerWidth = this.container.nativeElement.offsetWidth;
         this.contentWidth = this.content.nativeElement.offsetWidth;
     }
-    certificates = [
-        {
-            image: this.imageUrl('NWIGU2DS'),       //backend com java
-            link: this.certificateLink('NWIGU2DS')
-        },{
-            image: this.imageUrl('QIX6KFRO'),       //santander backend com java
-            link: this.certificateLink('QIX6KFRO')
-        },{
-            image: this.imageUrl('RBPCJ8RW'),       //java com IA
-            link: this.certificateLink('RBPCJ8RW')
-        }
-    ];
 
-    publicationsLinks = [
-        {
-            link: 'https://www.linkedin.com/embed/feed/update/urn:li:share:7230374378935353344'
-        },
-        {
-            link: 'https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7208156403272712193'
-        },
-        {
-            link: 'https://www.linkedin.com/embed/feed/update/urn:li:share:7216769073160867842'
-        },{
-            link: 'https://www.linkedin.com/embed/feed/update/urn:li:share:7207142379999358976'
-        }
-    ];
-
-    currentIndex = 0;
-    currentPubIndex = 0;
-
-    selectCertificate(index:number){
+    selectCertificate(index: number) {
         this.containerWidth = this.container.nativeElement.offsetWidth;
         this.contentWidth = this.content.nativeElement.offsetWidth;
         this.currentIndex = index;
@@ -71,63 +68,20 @@ export class AboutComponent implements AfterViewInit {
         this.selectCertificate(--this.currentIndex);
     }
 
-    selectPublication(index: number) {
-        this.currentPubIndex = index;
-    }
 
-    nextPublication() {
-        this.selectPublication(++this.currentPubIndex);
-    }
-
-    previousPublication() {
-        this.selectPublication(--this.currentPubIndex);
-    }
-
-    imageUrl(certificateNumber: string) {
-        return `https://hermes.dio.me/certificates/cover/${certificateNumber}.jpg`;
-    }
-    certificateLink(name: string) {
-        return `https://www.dio.me/certificate/${name}/share`
-    }
-
-    @ViewChild('left') left!: ElementRef;
-    @ViewChild('rigth') rigth!: ElementRef;
-    private scrollPosition: number = 0;
-    private elementHeight: number = 0;
-    private pageHeight: number = 0;
-  
     @HostListener('window:scroll', [])
     onWindowScroll() {
-      this.scrollPosition = window.scrollY;
-      this.elementHeight = this.left.nativeElement.offsetHeight;
-      const rect = this.left.nativeElement.getBoundingClientRect();
-      this.pageHeight = (rect.top + window.scrollY) - this.elementHeight;
-  
-      if (this.isShowing()) {
-        this.addAnim();
-      } else {
-        this.remAnim();
-      }
+        this.scrollPosition = window.scrollY;
+        const elementHeight = this.element.nativeElement.offsetHeight;        
+        const rect = this.element.nativeElement.getBoundingClientRect();
+
+        this.sectionTop = (rect.top + window.scrollY) - elementHeight;
+        this.sectionBottom = (this.sectionTop) + elementHeight;
     }
-  
-    private isShowing(): boolean {
-      return this.scrollPosition >= this.pageHeight;
+
+    isElementVisible(): boolean {
+        return this.scrollPosition >= this.sectionTop - 100 && this.scrollPosition <= this.sectionBottom + 100;
     }
-    private addAnim() {
-      this.left.nativeElement.style.opacity = 1;
-      this.left.nativeElement.style.transform = 'translateY(0)';
-      this.left.nativeElement.style.transform = 'translateX(0)';
-      this.rigth.nativeElement.style.opacity = 1;
-      this.rigth.nativeElement.style.transform = 'translateY(0)';
-      this.rigth.nativeElement.style.transform = 'translateX(0)';
-    }
-    private remAnim() {
-      this.left.nativeElement.style.transform = 'translateY(20px)';
-      this.left.nativeElement.style.transform = 'translateX(-100%)';
-      this.left.nativeElement.style.opacity = 0;
-      this.rigth.nativeElement.style.transform = 'translateY(20px)';
-      this.rigth.nativeElement.style.transform = 'translateX(100%)';
-      this.rigth.nativeElement.style.opacity = 0;
-    }
+    
 
 }

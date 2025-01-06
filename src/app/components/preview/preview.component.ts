@@ -1,9 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, Injectable } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-@Injectable({
-  providedIn: 'root'
-})
+import { Component, Injectable, Input } from '@angular/core';
+import { SafeResourceUrl } from '@angular/platform-browser';
+
+
 @Component({
   selector: 'app-preview',
   standalone: true,
@@ -12,23 +11,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   styleUrl: './preview.component.css'
 })
 export class PreviewComponent {
-  constructor(private sanitizer: DomSanitizer) { }
+
+  @Input() url!: string | SafeResourceUrl;
   
-  private static visible: boolean = false;
-  private static url: string = '';
-
-  toggleVisibility(url:string) {
-    this.setVideoUrl(url);
-    PreviewComponent.visible = !PreviewComponent.visible
-  }
-  isVisible() {
-    return PreviewComponent.visible;
-  }
-  setVideoUrl(url: string) {
-    PreviewComponent.url = url + '?si=Ji8T1VeYcE09jx6d&amp&autoplay=1;controls=0';
-  }
-
-  getVideoUrl(): SafeResourceUrl {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(PreviewComponent.url);
-  }
 }
