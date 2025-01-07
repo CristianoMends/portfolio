@@ -4,6 +4,7 @@ import { MainComponent } from "./pages/main/main.component";
 import { AnalyticsService } from './service/analytics.service';
 import { isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -14,9 +15,16 @@ import { FormsModule } from '@angular/forms';
   imports: [HttpClientModule, FormsModule, MainComponent]
 })
 export class AppComponent implements AfterViewInit {
-  constructor(@Inject(PLATFORM_ID) private platformId: Object, private analyticsService: AnalyticsService) { }
+  constructor(
+    private route: ActivatedRoute,
+    @Inject(PLATFORM_ID) private platformId: Object, private analyticsService: AnalyticsService) { }
 
   ngAfterViewInit(): void {
+    this.route.fragment.subscribe(fragment => {
+      if (fragment) {
+        document.getElementById(fragment)?.scrollIntoView({ behavior: 'instant' });
+      }
+    });
     if (isPlatformBrowser(this.platformId)) {
       this.analyticsService.saveAccess().subscribe({
         next: () => {
