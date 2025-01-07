@@ -5,10 +5,12 @@
             atuais
             principalmente em termos de programação e tecnologia</p>
     </div>
+    <h3 class="about-name">Quem sou?</h3>
+    @if (errorMessage) {
+    <div class="error">{{ errorMessage }}</div>
+    }@else {
     <div class="down" #down>
         <div class="left" [ngClass]="isElementVisible() ? 'anim-on':''">
-            <h3 class="about-name">Quem sou?</h3>
-
             @for (item of paragraphs; track $index) {
             <div>
                 <p class="about-description">
@@ -41,5 +43,7 @@
             </div>
         </div>
     </div>
+
     <app-skills></app-skills>
+    }
 </section>

@@ -29,6 +29,8 @@ export class RepositoriesComponent implements AfterViewInit {
   private scrollPosition: number = 0;
   private sectionTop: number = 0;
   private sectionBottom: number = 0;
+  errorMessage: string | null = null;
+
 
   pages: number[] = Array.from({ length: Math.ceil(this.limit / this.perPage) }, (_, index) => index + 1);
 
@@ -65,7 +67,8 @@ export class RepositoriesComponent implements AfterViewInit {
         this.repos = repositories;
         this.loadingService.hide();
       },
-      error: () => {
+      error: (err) => {
+        this.errorMessage = err;
         this.loadingService.hide();
       }
     })

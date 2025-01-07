@@ -26,10 +26,14 @@
     </div>
 
     <div class="dev-container">
+        @if (errorMessage) {
+        <div class="error">{{ errorMessage }}</div>
+        }@else {
         <div class="visits">
             <label for="visits">Visitas: </label>
             <span id="visits" class="qtd-access">{{qtd}}</span>
         </div>
+        }
         <p>&copy; 2024 - {{year}} Cristiano Mendes - Software Developer</p>
     </div>
 </footer>

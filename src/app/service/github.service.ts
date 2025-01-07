@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
+import { catchError, Observable, throwError } from 'rxjs';
 import Repository from '../interface/repo';
 import { environment } from '@env';
 
@@ -10,7 +10,6 @@ import { environment } from '@env';
 export class GithubService {
 
   private API_URL = environment.apiUrl;
-  private TOKEN = environment.token;
 
   constructor(private http: HttpClient) { }
   getHeaders(token: string) {
@@ -39,8 +38,13 @@ export class GithubService {
       .set('per_page', perPage.toString());
 
     return this.http.get<Repository[]>(this.API_URL + '/github/repos', {
-      headers: this.getHeaders(this.TOKEN),
       params: params
-    });
+    })
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+  private handleError(error: HttpErrorResponse) {
+    return throwError(() => new Error('Erro ao carregar os dados. Tente novamente mais tarde.'));
   }
 }

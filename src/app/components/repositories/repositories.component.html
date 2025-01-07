@@ -5,7 +5,9 @@
     <div class="description">
         <p>Aqui você encontrará detalhes dos últimos projetos no GitHub</p>
     </div>
-
+    @if (errorMessage) {
+    <div class="error">{{ errorMessage }}</div>
+    }@else {
     <div class="repositories">
         <div class="repos" [ngClass]="{'anim': isShowing()}">
             @for (repo of repos; track $index) {
@@ -17,5 +19,5 @@
                 (click)="selectPage(i)">
             </div>
         </div>
-    </div>
+    </div>}
 </section>

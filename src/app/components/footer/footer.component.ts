@@ -14,11 +14,17 @@ import { AnalyticsService } from '../../service/analytics.service';
 export class FooterComponent {
   qtd: number = 0;
   year = new Date().getFullYear();
+  errorMessage: string | null = null;
+
 
   constructor(private service: AnalyticsService) {
     service.getCountAccess().subscribe({
       next: (value) => {
         this.qtd = value;
+      },
+      error: (err) => {
+        this.errorMessage = err.message || 'Erro inesperado.';
+        return;
       }
     });
   }

@@ -26,6 +26,8 @@ export class ProjectsComponent implements OnInit {
   projects: Project[] = [];
   isComponentePreviewVisible = false;
   url: SafeResourceUrl | string = '';
+  errorMessage: string | null = null;
+
   
   ngOnInit(): void {
     this.loadingService.show();
@@ -33,7 +35,8 @@ export class ProjectsComponent implements OnInit {
       next: (p) => {
         this.projects = p;
         this.loadingService.hide();
-      }, error: () => {
+      }, error: (err) => {
+        this.errorMessage = err;
         this.loadingService.hide();
       }
     })

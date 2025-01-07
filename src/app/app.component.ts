@@ -28,6 +28,9 @@ export class AppComponent implements AfterViewInit {
     if (isPlatformBrowser(this.platformId)) {
       this.analyticsService.saveAccess().subscribe({
         next: () => {
+        },
+        error:(err)=>{
+          
         }
       })
     }
