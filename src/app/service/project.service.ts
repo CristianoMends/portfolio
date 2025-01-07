@@ -1,6 +1,6 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import Project from '../interface/project';
 import { environment } from '@env';
 
@@ -10,20 +10,16 @@ import { environment } from '@env';
 export class ProjectService {
 
   private API_URL = environment.apiUrl;
-  private TOKEN = environment.token;
+
   constructor(private http: HttpClient) { }
 
-  getHeaders(token: string) {
-
-    let headers = new HttpHeaders();
-    if (token) {
-      headers = headers.set('Authorization', 'Bearer ' + token);
-    }
-    return headers;
-  }
-
   getProjects(): Observable<Project[]> {
-
-    return this.http.get<Project[]>(this.API_URL + '/project', { headers: this.getHeaders(this.TOKEN) });
+    return this.http.get<Project[]>(this.API_URL + '/project', {})
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+  private handleError(error: HttpErrorResponse) {
+    return throwError(() => new Error('Erro ao carregar os dados. Tente novamente mais tarde.'));
   }
 }

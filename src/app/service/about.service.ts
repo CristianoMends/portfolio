@@ -1,6 +1,6 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import About from '../interface/about';
 import { environment } from '@env';
 
@@ -10,19 +10,18 @@ import { environment } from '@env';
 export class AboutService {
 
   private API_URL = environment.apiUrl;
-  private TOKEN = environment.token;
 
   constructor(private http: HttpClient) { }
-  
-  getHeaders(token: string) {
 
-    let headers = new HttpHeaders();
-    if (token) {
-      headers = headers.set('Authorization', 'Bearer ' + token);
-    }
-    return headers;
+  private handleError(error: HttpErrorResponse) {
+    return throwError(() => new Error('Erro ao carregar os dados. Tente novamente mais tarde.'));
   }
+
   getAbout(): Observable<About[]> {
-    return this.http.get<About[]>(this.API_URL + '/about',{ headers: this.getHeaders(this.TOKEN) });
+    return this.http
+      .get<About[]>(this.API_URL + '/about', { })
+      .pipe(
+        catchError(this.handleError)
+      );
   }
 }

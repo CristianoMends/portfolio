@@ -7,41 +7,19 @@
         <p>Aqui você encontrará alguns dos projetos pessoais que criei com seus detalhes, demonstrações e as tecnologias
             utilizadas</p>
     </div>
+    @if (errorMessage) {
+    <div class="error">{{ errorMessage }}</div>
+    }@else{
     <div class="projects">
-
         @for (p of projects; track $index) {
-        <app-project 
-            [name]="p.name"
-            [description]="p.description"
-            [technologies]="p.technologies.split(',')"
-            [image]="p.image" 
-            [urlRepository]="p.repositoryUrl"
-            [urlProduction]="p.url" 
-            [urlVideo]="p.youtubeUrl"
-            (url)="showPreview($event)"
-            >
+        <app-project [name]="p.name" [description]="p.description" [technologies]="p.technologies.split(',')"
+            [image]="p.image" [urlRepository]="p.repositoryUrl" [urlProduction]="p.url" [urlVideo]="p.youtubeUrl"
+            (url)="showPreview($event)">
         </app-project>
         }
 
-        <!--<app-project
-            [name]="'The Catalog'"
-            [description]="'The Catalog é um Catálogo de produtos que oferece uma maneira intuitiva e eficiente de explorar uma variedade de produtos de várias lojas registradas. Com uma interface amigável e funcionalidade de busca e contato com vendedor, os usuários podem navegar facilmente pelo catálogo, encontrando informações detalhadas sobre cada item.'"
-            [technologies]="['Nest.Js', 'Angular 17', 'PostgreSQL', 'Vercel']"
-            [pcImagePath]="'../../assets/thecatalog-pc.png'"
-            [mobileImagePath]="'../../assets/thecatalog-mobile.png'"
-            [urlRepository]="'https://github.com/CristianoMends/product-catalog-app'"
-            [urlProduction]="'https://thecatalog.vercel.app'"
-            [urlVideo]="'https://www.youtube.com/embed/nN-u9vPlpdg'">
-        </app-project>
-        <app-project
-            [name]="'Sales Manager v1'"
-            [description]="'Este projeto é uma aplicação para gerenciar vendas. Ele permite registrar, deletar, ver vendas e produtos durante o dia. Essa aplicação foi idealizada no contexto de lanchonete e para ser usado em desktop, mas pode ser adaptada e aplicada para uso diverso!'"
-            [technologies]="['Java', 'Angular', 'PostgreSQL', 'SpringBoot']"
-            [pcImagePath]="'../../assets/sales-manager.png'"
-            [urlRepository]="'https://github.com/CristianoMends/sale-record-app'"
-            [urlVideo]="'https://www.youtube.com/embed/AGgh4xPDEsI'">
-        </app-project>
 
+        <!--
         <app-project 
             [name]="'FreeLoot API'"
             [description]="'FreeLoot API é uma aplicação que realiza scraping de dados de sites como a Epic Games Store para obter informações sobre jogos gratuitos e disponibilizá-los por meio de uma API RESTful. O objetivo é capturar e salvar dados de jogos gratuitos em um banco de dados, permitindo o acesso a essas informações de forma estruturada.'"
@@ -52,4 +30,5 @@
             >
         </app-project> -->
     </div>
+    }
 </section>

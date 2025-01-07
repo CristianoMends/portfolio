@@ -19,15 +19,17 @@ export class AboutComponent implements AfterViewInit {
 
     private containerWidth!: number;
     private contentWidth!: number
+    errorMessage: string | null = null;
+
 
     certificates: Certificate[] = [];
     paragraphs: About[] = [];
     currentIndex = 0;
-    
+
     private scrollPosition: number = 0;
     private sectionTop: number = 0;
     private sectionBottom: number = 0;
-    
+
     @ViewChild('down') element!: ElementRef;
     @ViewChild('content') private content!: ElementRef;
     @ViewChild('container') private container!: ElementRef;
@@ -39,11 +41,17 @@ export class AboutComponent implements AfterViewInit {
         this.certificateService.getCertificates().subscribe({
             next: (res) => {
                 this.certificates = res;
+            },
+            error: (err) => {
+                this.errorMessage = err;
             }
         })
         this.aboutService.getAbout().subscribe({
             next: (res) => {
                 this.paragraphs = res;
+            },
+            error: (err) => {
+                this.errorMessage = err;
             }
         })
 
@@ -72,7 +80,7 @@ export class AboutComponent implements AfterViewInit {
     @HostListener('window:scroll', [])
     onWindowScroll() {
         this.scrollPosition = window.scrollY;
-        const elementHeight = this.element.nativeElement.offsetHeight;        
+        const elementHeight = this.element.nativeElement.offsetHeight;
         const rect = this.element.nativeElement.getBoundingClientRect();
 
         this.sectionTop = (rect.top + window.scrollY) - elementHeight;
@@ -82,6 +90,6 @@ export class AboutComponent implements AfterViewInit {
     isElementVisible(): boolean {
         return this.scrollPosition >= this.sectionTop - 100 && this.scrollPosition <= this.sectionBottom + 100;
     }
-    
+
 
 }
